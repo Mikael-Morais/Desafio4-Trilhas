@@ -17,10 +17,11 @@ se já fizeram isso então segue abaixo
 
 ### 2. Verificar repositório
 ```bash
+git pull origin main
 git log
 git fetch origin
 ```
-"log" pra ver, "fetch" para puxar as outras branchs remotas
+"pull" para puxar todas as alterações já feitas, "log" pra ver, "fetch" para puxar as outras branchs remotas
 
 ---
 
