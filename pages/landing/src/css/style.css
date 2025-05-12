@@ -24,7 +24,7 @@ html {
 }
 
 body {
-    background-color: var(--withe-color1);
+    background: linear-gradient(to bottom,  #13311f 0%, #356b4a 50%, #86ac95  100%);
     color: var(--withe-color1);
 }
 
@@ -115,12 +115,12 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: var(--green1);
+    /* background-color: var(--green1); */
     color: var(--withe-color1);
 }
 
 .section:nth-child(even) {
-    background-color: var(--withe-color2);
+    /* background-color: var(--withe-color2); */
     color: var(--brown2);
 }
 
@@ -179,21 +179,74 @@ body {
     white-space: unset;
 
 }
+#recycle{
+    display: flex;
+     flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem;
+    font-family: 'Bree Serif', serif;
+    color: #10291a;
+    font-size: 2.5rem;
+    gap: 12px;
+    
+}
+#recycle-content{
+    display: flex;
+    flex-direction: row;
+}
 
-#recycle {
+
+.recycle-content {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-around; 
+    gap: 2rem; 
+    margin-bottom: 5.5rem; 
+}
+
+.recycle-content div {
+    text-align: center; 
+    flex: 1; 
+}
+
+.recycle-content img {
+    width: 80px; 
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+
+.recycle-impact {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 2rem; 
+}
+
+#benefits {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 4rem 2rem;
-    background-color: var(--withe-color2);
-    color: var(--brown2);
+    /* background-color: var(--withe-color2); */
+    color:  #10291a;
+    font-size: 2.5rem;
+    font-family: 'Bree Serif', serif;
 }
+
+/* #benefits-content {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start; */
 
 .stats-container {
     display: flex;
-    gap: 4rem;
+    flex-direction: row; /* Alinha os números de reciclagem e poluição em linha */
+    gap: 4rem; /* Espaçamento entre os blocos */
     margin-top: 2rem;
 }
 
@@ -214,6 +267,68 @@ body {
     font-weight: bold;
     color: var(--green1);
     transition: all 0.3s ease-in-out;
+}
+
+.main-footer {
+    background-color: #21251f;
+    color: var(--withe-color1);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.team {
+    text-align: center;
+}
+
+.team h3 {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+    color: var(--withe-color1);
+}
+
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.member img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--green1);
+}
+
+.member a {
+    color: var(--withe-color1);
+    text-decoration: none;
+    font-size: 1.4rem;
+    transition: color 0.3s;
+}
+
+.member a:hover {
+    color: var(--green1);
+}
+
+.copyright {
+    font-size: 1.2rem;
+    color: var(--withe-color2);
 }
 
 /* Responsivo */
