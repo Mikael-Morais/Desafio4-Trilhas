@@ -24,17 +24,22 @@ function animateNumbers() {
     let pollutionValue = 100;
 
     const interval = setInterval(() => {
+
         if (recyclingValue < 63) {
+
             recyclingValue++;
             recyclingStat.textContent = recyclingValue;
         }
+
 
         if (pollutionValue > 37) {
             pollutionValue--;
             pollutionStat.textContent = pollutionValue;
         }
 
+
         if (recyclingValue === 63 && pollutionValue === 37) {
+
             clearInterval(interval);
         }
     }, 80); // Ajuste o tempo para controlar a velocidade da animação
