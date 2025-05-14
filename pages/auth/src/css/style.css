@@ -1,0 +1,394 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 16px;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  overflow-y: hidden;
+  font-family: Arial, sans-serif;
+  background-color: #000000;
+}
+
+.retangulo-painel,
+.container-img {
+  width: 100%;
+  flex: none;
+}
+
+.principal {
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+  flex-wrap: wrap;
+
+}
+
+.container-img {
+  width: 70vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  object-fit: cover;
+  position: relative;
+}
+
+.container-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+}
+
+.retangulo-painel {
+  width: 30vw;
+  min-height: 100vh;
+  background-color: #463300;
+  background-image: url(Img/floresta.png);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+}
+
+.retangulo-painel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30vw;
+  height: 100vh;
+  background: rgba(49, 29, 0, 0.70);
+  backdrop-filter: blur(5px);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+}
+
+.retangulo-painel>* {
+  position: relative;
+  z-index: 2;
+}
+
+.logoZelus {
+  width: 7em;
+  height: auto;
+  top: 0;
+}
+
+
+.form-login {
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+
+
+}
+
+.container-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  gap: 2.25rem;
+
+}
+
+.bloco-usuario {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.bloco-senha {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.frase-login {
+  font-size: 1.5rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #ffffff;
+
+}
+
+.campo {
+  width: 20vw;
+  height: 7vh;
+  min-width: 280px;
+  min-height: 50px;
+  padding: 10em;
+  background-color: rgba(217, 217, 217, 0.8);
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  padding: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 1.25em;
+  color: #484848;
+  text-align: center;
+  box-sizing: border-box;
+
+}
+
+.texto-campo {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.25em;
+  text-align: left;
+  display: block;
+  font-weight: 300;
+  color: #ffffff;
+}
+
+.botao-entre {
+  height: 2.25em;
+  width: 6em;
+  min-height: 50px;
+  min-width: 70px;
+  border-radius: 40px;
+  border: none;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(1rem, 1.5vw, 2rem);
+  background-color: #27523E;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+}
+
+.botao-entre:hover {
+  background-color: #5AA19A;
+}
+
+.esq-senha {
+  font-family: "Poppins", sans-serif;
+  font-size: 1vw;
+  font-weight: 300;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  text-decoration: underline;
+
+}
+
+.registro {
+  font-family: "Poppins", sans-serif;
+  font-size: 1vw;
+  font-weight: 300;
+
+
+}
+
+.link-cadastro {
+  color: #5AA299;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  text-decoration: underline;
+}
+
+.link-cadastro:hover {
+  color: #c18a00;
+
+}
+
+.rec-senha {
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.rec-senha:hover {
+  color: #c18a00;
+}
+
+
+.final-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.icone-container {
+  background-image: url('Img/circulo-frase.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 50vw;
+  height: 40vh;
+  min-height: 200px;
+  min-height: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+.icone-container img {
+  width: 4rem;
+  max-width: 80%;
+  height: auto;
+}
+
+
+@media (max-width: 1080px) {
+  .principal {
+    flex-direction: row;
+    min-height: 100vh
+  }
+
+  .retangulo-painel,
+  .container-img {
+    width: 50vw;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  .container-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .container-img .icone-container {
+    width: 50vw;
+    height: 35vh;
+    min-height: 200px;
+    min-height: 200px;
+  }
+
+  .retangulo-painel .botao-entre {
+    width: 8em;
+    height: 3.5em;
+  }
+
+  .retangulo-painel .esq-senha {
+    font-size: 0.75em;
+  }
+
+  .retangulo-painel .registro {
+    font-size: 0.75em;
+  }
+
+  .retangulo-painel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(49, 29, 0, 0.70);
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 1;
+  }
+}
+
+@media (max-width: 680px) {
+  .principal {
+    flex-direction: column;
+    height: auto;
+
+  }
+
+  .retangulo-painel .container-login {
+    gap: 25px;
+    overflow-y: auto;
+  }
+
+  .retangulo-painel,
+  .container-img {
+    width: 100vw;
+    height: auto;
+  }
+
+  .retangulo-painel {
+    min-height: 100vh;
+    padding: 1rem;
+    font-size: 1rem;
+    gap: 5px;
+  }
+
+  .container-img {
+    height: 100vh;
+  }
+
+  .container-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+  .retangulo-painel .campo {
+    width: 50vw;
+    height: 8vh;
+    min-width: 300px;
+    min-height: 50px;
+    padding: 10px;
+    background-color: rgba(217, 217, 217, 0.8);
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    padding: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 1.25em;
+    color: #484848;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+
+  .retangulo-painel .texto-campo {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.25em;
+    text-align: left;
+    display: block;
+    font-weight: 300;
+    color: #ffffff;
+
+  }
+
+  .retangulo-painel .botao-entre {
+    height: 2em;
+    width: 7.5em;
+    font-size: 1em;
+    gap: 20px;
+  }
+
+  .retangulo-painel .esq-senha {
+    font-size: 0.75em;
+  }
+
+  .retangulo-painel .registro {
+    font-size: 0.75em;
+  }
+
+  .retangulo-painel::before {
+    width: 100vw;
+    height: 100%;
+  }
+
+}

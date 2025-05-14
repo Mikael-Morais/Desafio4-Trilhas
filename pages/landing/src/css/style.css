@@ -1,0 +1,430 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-color1: #1c1c1c;
+    --dark-color2: #333333;
+    --withe-color1: #ffffff;
+    --withe-color2: #d9d9d9;
+    --withe-color3: #a8a8a8;
+    --brown1: #311D00;
+    --brown2: #4C2D00;
+    --brown3: #724500;
+    --green1: #27523E;
+    --green2: #59A098;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Montserrat', serif;
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--withe-color2);
+}
+
+.hiden {
+    display: none;
+}
+
+/* Header fixo */
+#header-principal {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--withe-color2);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 0.4rem;
+    align-items: center;
+}
+
+#header-container {
+    top: 0;
+    margin: 0 auto;
+    max-width: 130rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo-container {
+    display: flex;
+    align-items: center;
+
+    & #logo {
+        height: 5rem;
+        width: auto;
+        padding: 0.5rem;
+    }
+
+    & h1 {
+        color: var(--green1);
+        font-size: 2.3rem;
+        font-family: 'Bree Serif';
+    }
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & ul {
+        list-style: none;
+        display: flex;
+        gap: 2.5rem;
+        flex-wrap: wrap;
+    }
+}
+
+.option, #redirect-btn {
+    font-family: 'Poppins' sans-serif;
+    text-decoration: none;
+    font-size: 1.6rem;
+    color: var(--brown1);
+    font-weight: 600;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.option:hover {
+    color: var(--brown2);
+}
+
+.option::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem; left: 0;
+    width: 0; height: 0.2rem;
+    background-color: var(--brown3);
+    transition: width 0.3s ease;
+}
+.option:hover::after {
+    width: 100%; 
+}
+
+#redirect-btn {
+    background-color: var(--brown2);
+    padding: 0.5rem 1.5rem;
+    color: var(--withe-color2);
+    border-radius: 0.4rem;
+    transition: background-color 0.2s;
+    margin-right: 0.4rem;
+}
+#redirect-btn:hover {
+    background-color: var(--brown3);
+}
+
+
+#hamburger-menu {
+    background: transparent;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0 2rem;
+}
+
+@media (max-width: 620px) {
+    #logo-container {
+        padding-right: 1rem;
+    }
+    .hiden {
+        display: block;
+    }
+
+    #navbar {
+        position: fixed;
+        padding: 2rem;
+        background: var(--withe-color2);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        align-items: start;
+        height: 100vh;
+
+        & ul {
+            flex-direction: column;
+        };
+    }
+    .close {
+        top: 0; left: -82.6rem;
+    }
+    .open {
+        top: 0; left: 0;
+    }
+
+    #redirect-btn {
+        padding: 0.5rem 2.5rem;
+    }
+}
+
+
+
+
+/* Seções */
+.section {
+    min-height: 80rem;
+    padding: 6rem 2rem 2rem; /* espaço extra no topo para compensar a barra de navegação fixo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--withe-color2);
+}
+
+.faixa {
+    min-height: 25rem;
+    padding: 6rem 2rem 2rem; /* espaço extra no topo para compensar a barra de navegação fixo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--withe-color2);
+}
+
+
+#home {
+    background-image: url("../img/home-image.png");
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#home-text {
+    width: 100%;
+    max-width: 130rem;
+    display: flex;
+    align-items: start;
+    justify-content: left;
+    flex-direction: column;
+
+    & #home-p {
+        margin-top: 4rem;
+        max-width: 43rem;
+        text-align: justify;
+        font-family: 'Montserrat';
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+}
+
+#home-title {
+    font-family: 'Bree Serif';
+    line-height: 5.3rem;
+    display: flex;
+    
+    & h1 {
+        font-size: 9rem;
+        margin-right: 2rem;
+    }
+    & h2 {
+        text-align: left;
+        font-size: 6rem;
+    }
+}
+
+
+#about {
+    background-image: url("../img/bgs/bg01.svg");
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row ;
+    width: 100%;
+    max-width: 130rem;
+    padding: 0.5rem;
+}
+
+#about-content {
+    flex: 1;
+    padding: 3rem 3rem 3rem 0;
+    border-right: solid 0.1rem var(--withe-color2);
+
+    & h2 {
+        font-family: 'Poppins' serif;
+        font-size: 3rem;
+        text-align: left;
+
+    }
+    & p {
+        font-family: 'Poppins' serif;
+        font-size: 1.6rem;
+        text-align: justify;
+        margin-top: 1.8rem;
+    }
+}
+
+#about-image {
+    flex: 1;
+    padding: 0 3rem;
+    display: flex;
+    align-items: center;
+
+    & img {
+        width: auto;
+        filter: brightness(0.8);
+    }
+}
+
+#recycle{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem;
+    font-family: 'Bree Serif', serif;
+    color: #10291a;
+    font-size: 2.5rem;
+    gap: 12px;
+    
+}
+#recycle-content{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.recycle-content {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-around; 
+    gap: 2rem; 
+    margin-bottom: 5.5rem; 
+}
+
+.recycle-content div {
+    text-align: center; 
+    flex: 1; 
+}
+
+.recycle-content img {
+    width: 80px; 
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+
+.recycle-impact {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 2rem; 
+}
+
+#benefits {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    /* background-color: var(--withe-color2); */
+    color:  #10291a;
+    font-size: 2.5rem;
+    font-family: 'Bree Serif', serif;
+}
+
+/* #benefits-content {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start; */
+
+.stats-container {
+    display: flex;
+    flex-direction: row; /* Alinha os números de reciclagem e poluição em linha */
+    gap: 4rem; /* Espaçamento entre os blocos */
+    margin-top: 2rem;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat h3 {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+}
+
+.stat-number {
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--green1);
+    transition: all 0.3s ease-in-out;
+}
+
+.main-footer {
+    background-color: #21251f;
+    color: var(--withe-color2);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.team {
+    text-align: center;
+}
+
+.team h3 {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+    color: var(--withe-color2);
+}
+
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.member img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--green1);
+}
+
+.member a {
+    color: var(--withe-color2);
+    text-decoration: none;
+    font-size: 1.4rem;
+    transition: color 0.3s;
+}
+
+.member a:hover {
+    color: var(--green1);
+}
+
+.copyright {
+    font-size: 1.2rem;
+    color: var(--withe-color3);
+}
