@@ -9,39 +9,54 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <header class="main-header">
-        <div class="logo-container">
-            <img class="logo" src="src/img/logo-zelus.png" alt="logo da ZeluS: duas mãos em volta de um círculo com uma folha no meio">
-            <h1 class="hiden">ZeluS</h1>
+    <header id="header-principal">
+        <div id="header-container">
+            <div id="logo-container">
+                <img id="logo" src="src/img/logo-zelus.png" alt="logo da ZeluS: duas mãos em volta de um círculo com uma folha no meio">
+                <h1 class="">ZeluS</h1>
+            </div>
+            <nav id="navbar" class="close">
+                <ul>
+                    <li><a href="#home" class="option">Home</a></li>
+                    <li><a href="#about" class="option">Sobre nós</a></li>
+                    <li><a href="#recycle" class="option">Reciclagem</a></li>
+                    <li><a href="#benefits" class="option">Benefícios</a></li>
+                    <li><a href="#" id="redirect-btn">Entrar</a></li>
+                </ul>
+            </nav>
+            <button id="hamburger-menu" aria-label="Menu" class="hiden">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#home" class="option">Home</a></li>
-                <li><a href="#about" class="option">Sobre nós</a></li>
-                <li><a href="#recycle" class="option">Reciclagem</a></li>
-                <li><a href="#benefits" class="option">Benefícios</a></li>
-                <li><a href="#" class="redirect-btn">Entrar</a></li>
-            </ul>
-        </nav>
-        <button class="hamburger-menu" aria-label="Menu">
-            <i class="fas fa-bars"></i>
-        </button>
     </header>
+
+    <!-- Seção inicial -->
     <section id="home" class="section">
-        <h1>ZeluS</h1>
-        <h2>grup</h2>
+        <div id="home-text">
+            <div id="home-title">
+                <h1>ZeluS</h1>
+                <h2>grup</h2>
+            </div>
+            <p id="home-p">
+                O cuidado com o planeta, com as pessoas e com o futuro na palma da mão. Transforme lixo em valor. Com ZeluS, sustentabilidade vira recompensa. 
+            </p>
+        </div>
     </section>
 
     <section id="about" class="section">
-        <div id="about-content">
-            <p>Na <spam>ZeluS</spam>, acreditamos que cidades mais sustentáveis começam com atitudes individuais. Somos uma empresa inovadora dedicada a incentivar a preservação urbana através da reciclagem correta de resíduos sólidos. Nosso propósito é transformar o ato de cuidar do meio ambiente em uma experiência recompensadora: ao reciclar nos ecopontos parceiros, você acumula pontos que podem ser convertidos em descontos em contas de energia, água e outros benefícios, aproximando práticas responsáveis do seu dia a dia.
-            </p>
-        </div>
-        <div>
-            <img src="src/img/Fotos Molduras.png" alt="nature">
+        <div id="about-container">
+            <div id="about-content">
+                <h2>Sobre nós</h2>
+                <p>Na <bold>ZeluS</bold>, acreditamos que cidades mais sustentáveis começam com atitudes individuais. Somos uma empresa inovadora dedicada a incentivar a preservação urbana através da reciclagem correta de resíduos sólidos. Nosso propósito é transformar o ato de cuidar do meio ambiente em uma experiência recompensadora: ao reciclar nos ecopontos parceiros, você acumula pontos que podem ser convertidos em descontos em contas de energia, água e outros benefícios, aproximando práticas responsáveis do seu dia a dia.</p>
+                <p>Nosso propósito é transformar o ato de cuidar do meio ambiente em uma experiência recompensadora: ao reciclar nos ecopontos parceiros, você acumula pontos que podem ser convertidos em descontos em contas de energia, água e outros benefícios, aproximando práticas responsáveis do seu dia a dia.</p>
+                <p>Temos fé no poder da coletividade e da informação. Por isso, além da coleta inteligente, oferecemos também um guia educativo sobre reciclagem, ajudando cada pessoa a entender seu papel na cadeia da sustentabilidade. Com a ZeluS, você não apenas descarta — você participa de uma transformação que une tecnologia, consciência e recompensas para um futuro mais limpo e justo.</p>
+            </div>
+            <div id="about-image">
+                <img src="src/img/molduras.png" alt="nature">
+            </div>
         </div>
     </section>
-
+<!--
     <section id="recycle" class="section">
         <div class="recycle-content">
             <div id="mission">
@@ -116,7 +131,7 @@
                 <p>&copy; 2025 ZeluS. Todos os direitos reservados.</p>
             </div>
         </div>
-    </footer>
+    </footer> -->
     <script src="src/js/main.js"></script>
 
 </body>
