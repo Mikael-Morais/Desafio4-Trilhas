@@ -1,0 +1,148 @@
+/* Container principal do card */
+.transferencia-card {
+    background: var(--withe-color1);
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(44, 44, 44, 0.08);
+    padding: 2rem 2.5rem;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.transferencia-card h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    color: var(--green1);
+    margin-bottom: 1.5rem;
+    gap: 0.8rem;
+}
+
+.transferencia-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.transferencia-dados {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.transferencia-dados ul {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    list-style: disc inside;
+    padding: 0;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.transferencia-dados ul li {
+    font-size: 1.15rem;
+    color: var(--dark-color2);
+    background: var(--withe-color2);
+    border-radius: 0.4rem;
+    padding: 0.5rem 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.transferencia-img img {
+    width: 140px;
+    height: auto;
+    border-radius: 0.5rem;
+    border: 1px solid var(--withe-color3);
+    box-shadow: 0 1px 4px rgba(44,44,44,0.07);
+}
+
+.transferencia-acoes {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.btn-approve, .btn-reject {
+    padding: 0.6rem 1.4rem;
+    border: none;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-approve {
+    background: var(--green1);
+    color: var(--withe-color1);
+}
+
+.btn-approve:hover {
+    background: var(--green2);
+}
+
+.btn-reject {
+    background: #e57373;
+    color: var(--withe-color1);
+}
+
+.btn-reject:hover {
+    background: #c62828;
+}
+
+/* Gráfico de pedidos */
+.transferencia-grafico {
+    background: #ededed;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(44, 44, 44, 0.08);
+    padding: 2rem 2.5rem;
+    max-width: 600px;
+    margin: 0 auto 2.5rem auto;
+    text-align: center;
+}
+
+.transferencia-grafico h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem;
+    color: var(--brown2);
+    margin-bottom: 1.2rem;
+}
+
+.pedidos-lista {
+    max-height: 180px;
+    overflow-y: auto;
+    background: #f5f5f5;
+    border-radius: 0.7rem;
+    padding: 1rem 0.5rem;
+    margin: 1rem 0 0 0;
+    list-style: disc inside;
+    text-align: left;
+}
+
+.pedidos-lista li {
+    padding: 0.7rem 1rem;
+    margin-bottom: 0.3rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.2s;
+    font-size: 1.1rem;
+    background: #e0e0e0;
+}
+
+.pedidos-lista li:hover,
+.pedidos-lista li.selected {
+    background: #d0f5e2;
+}
+
+.pedido-id {
+    color: var(--green1);
+    font-weight: bold;
+    margin-left: 1.2rem;
+}
