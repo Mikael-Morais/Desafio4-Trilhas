@@ -429,21 +429,50 @@ body {
 }
 
 
-
-#benefits{
-
-}
+/* #benefits{} */
 
 #benefits-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     max-width: 130rem;
-    
+    gap: 6rem;
+    flex-wrap: wrap;
 }
+
+#benefits-img img {
+    width: 100%;
+    max-width: 45rem;
+}
+
+#benefits-content {
+    flex: 1;
+    max-width: 60rem;
+}
+
+#benefits-content h2 {
+    font-size: 3rem;
+    color: var(--dark-color1);
+    margin-bottom: 1.5rem;
+}
+
+#benefits-content p {
+    font-size: 1.6rem;
+    color: var(--dark-color2);
+    margin-bottom: 1.8rem;
+    text-align: justify;
+}
+
+#benefits-content p strong {
+    color: var(--main-color);
+}
+
 
 
 
 
 .main-footer {
-    background-color: #21251f;
+    background-color: var(--dark-color1);
     color: var(--withe-color2);
     padding: 4rem 2rem;
     text-align: center;
