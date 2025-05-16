@@ -168,8 +168,8 @@ body {
 
 /* Seções */
 .section {
-    min-height: 80rem;
-    padding: 6rem 2rem 2rem; /* espaço extra no topo para compensar a barra de navegação fixo */
+    min-height: 20rem;
+    padding: 7rem 2rem 7rem 2rem; /* espaço extra no topo para compensar a barra de navegação fixo */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -193,6 +193,7 @@ body {
     background-size:cover;
     background-position: center;
     background-repeat: no-repeat;
+    height: 90rem;
 }
 
 #home-text {
@@ -255,7 +256,6 @@ body {
         font-family: 'Poppins' serif;
         font-size: 3rem;
         text-align: left;
-
     }
     & p {
         font-family: 'Poppins' serif;
@@ -277,95 +277,170 @@ body {
     }
 }
 
-#recycle{
+
+#strip-informations {
+    justify-content: space-between;
+    padding: 5rem 0;
+    max-width: 130rem;
+    margin: 0 auto;
+    gap: 2.7rem;
+
+}
+
+.strip-cards {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
+    flex: 1;
+    color: var(--dark-color1);
+
+    & h2 {
+        font-family: 'Poppins' serif;
+        font-size: 2.1rem;
+        margin: 0.5rem 0 1rem 0;
+    }
+    & p {
+        font-size: 1.6rem;
+    }
+}
+
+.section.re {
+    background: var(--brown1);
+    padding-top: 1rem;
+}
+.strip-cards.re {
+    color: var(--withe-color2);
+    flex: 0.3;
+
+    & img {
+        max-width: 7.5rem;
+    }
+
+    & p {
+        font-size: 2rem;
+    }
+}
+
+#recycle{
+    background-image: url("../img/bgs/bg02.svg");
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#recycle-container{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+}
+
+
+#recycle-content {
+    flex: 1;
+    
+    & h2 {
+        font-size: 3rem;
+        font-family: 'Poppins', serif;
+        margin-bottom: 1.5rem;
+    }
+    & p {
+        font-size: 1.6rem;
+        color: var(--graw-color1);
+        text-align: justify;
+    }
+}
+
+.carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+    margin-top: 2rem;
+    flex: 1;
+    display: flex;
     justify-content: center;
-    text-align: center;
-    padding: 4rem;
-    font-family: 'Bree Serif', serif;
-    color: #10291a;
-    font-size: 2.5rem;
-    gap: 12px;
+}
+
+.carousel {
+    display: flex;
+    gap: 3.5rem;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    padding: 1rem 0 ;
+    max-width: 135rem;
+    padding: 0 4rem;
+}
+
+.recycle-card {
+    flex: 0 0 30rem;
+    border-radius: 1rem;
+    padding: 2rem;
+    color: #fff;
+    min-height: 18rem;
+    box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.2);
+    min-width: 40rem;
+}
+.recycle-card img {
+    padding: 3rem;
+    max-width: 25rem;
+}
+
+.recycle-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.recycle-card p {
+    font-size: 1.4rem;
+}
+
+/* Cores dos cards */
+.recycle-card.blue { background-color: #1565c0; }
+.recycle-card.red { background-color: #d32f2f; }
+.recycle-card.green { background-color: #2e7d32; }
+.recycle-card.yellow { background-color: #fbc02d; color: #000; }
+.recycle-card.brown { background-color: #6d4c41; }
+.recycle-card.gray { background-color: #757575; }
+
+/* Botões do carrossel */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 1;
+    transition: background-color 0.3s;
+}
+
+.carousel-btn:hover {
+    background-color: var(--variante1);
+}
+
+.prev-btn {
+    left: 0.5rem;
+}
+
+.next-btn {
+    right: 0.5rem;
+}
+
+
+
+#benefits{
+
+}
+
+#benefits-container {
+    max-width: 130rem;
     
 }
-#recycle-content{
-    display: flex;
-    flex-direction: row;
-}
 
 
-.recycle-content {
-    display: flex;
-    flex-direction: row; 
-    justify-content: space-around; 
-    gap: 2rem; 
-    margin-bottom: 5.5rem; 
-}
 
-.recycle-content div {
-    text-align: center; 
-    flex: 1; 
-}
-
-.recycle-content img {
-    width: 80px; 
-    height: auto;
-    margin-bottom: 1rem;
-}
-
-
-.recycle-impact {
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    gap: 2rem; 
-}
-
-#benefits {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 4rem 2rem;
-    /* background-color: var(--withe-color2); */
-    color:  #10291a;
-    font-size: 2.5rem;
-    font-family: 'Bree Serif', serif;
-}
-
-/* #benefits-content {
-    width: 50%;
-    display: flex;
-    justify-content: flex-start; */
-
-.stats-container {
-    display: flex;
-    flex-direction: row; /* Alinha os números de reciclagem e poluição em linha */
-    gap: 4rem; /* Espaçamento entre os blocos */
-    margin-top: 2rem;
-}
-
-.stat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.stat h3 {
-    font-size: 2.4rem;
-    margin-bottom: 1rem;
-}
-
-.stat-number {
-    font-size: 4rem;
-    font-weight: bold;
-    color: var(--green1);
-    transition: all 0.3s ease-in-out;
-}
 
 .main-footer {
     background-color: #21251f;
@@ -386,8 +461,8 @@ body {
 }
 
 .team h3 {
-    font-size: 2.4rem;
-    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
     color: var(--withe-color2);
 }
 

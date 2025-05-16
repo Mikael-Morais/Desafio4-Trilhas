@@ -46,14 +46,26 @@ function animateNumbers() {
     }, 80); // Ajuste o tempo para controlar a velocidade da animação
 }
 
-// Ativa a animação quando a seção #recycle estiver visível
-document.addEventListener('scroll', () => {
-    const recycleSection = document.querySelector('#recycle');
-    const sectionPosition = recycleSection.getBoundingClientRect().top;
-    const screenPosition = window.innerHeight / 1.3;
+// // Ativa a animação quando a seção #recycle estiver visível
+// document.addEventListener('scroll', () => {
+//     const recycleSection = document.querySelector('#recycle');
+//     const sectionPosition = recycleSection.getBoundingClientRect().top;
+//     const screenPosition = window.innerHeight / 1.3;
 
-    if (sectionPosition < screenPosition && !hasAnimated) {
-        hasAnimated = true; // Marca a animação como já executada
-        animateNumbers();
-    }
+//     if (sectionPosition < screenPosition && !hasAnimated) {
+//         hasAnimated = true; // Marca a animação como já executada
+//         animateNumbers();
+//     }
+// });
+
+const carousel = document.getElementById('recycle-slider');
+const nextBtn = document.querySelector('.next-btn');
+const prevBtn = document.querySelector('.prev-btn');
+
+nextBtn.addEventListener('click', () => {
+    carousel.scrollBy({ left: 435, behavior: 'smooth' });
+});
+
+prevBtn.addEventListener('click', () => {
+    carousel.scrollBy({ left: -435, behavior: 'smooth' });
 });
