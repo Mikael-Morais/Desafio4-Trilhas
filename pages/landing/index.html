@@ -21,7 +21,7 @@
                     <li><a href="#about" class="option">Sobre nós</a></li>
                     <li><a href="#recycle" class="option">Reciclagem</a></li>
                     <li><a href="#benefits" class="option">Benefícios</a></li>
-                    <li><a href="#" id="redirect-btn">Entrar</a></li>
+                    <li><a href="../auth/login.html" id="redirect-btn">Entrar</a></li>
                 </ul>
             </nav>
             <button id="hamburger-menu" aria-label="Menu" class="hiden">
@@ -56,46 +56,113 @@
             </div>
         </div>
     </section>
-<!--
-    <section id="recycle" class="section">
-        <div class="recycle-content">
-            <div id="mission">
-                <img src="src/img/Icone (1).png" alt="alvo">
-                <h3>MISSÃO</h3>
-                <p>Promover a sustentabilidade por meio da tecnologia, incentivando o descarte correto de resíduos através de recompensas.</p>
-            </div>
-            <div id="vision">
-                <img src="src/img/Icone (2).png" alt="visão">
-                <h3>VISÃO</h3>
-                <p>Ser referência nacional em soluções digitais para reciclagem, construindo uma cultura ecológica acessível, vantajosa e colaborativa.</p>
-            </div>
-            <div id="values">
-                <img src="src/img/Icone (3).png" alt="valores">
-                <h3>VALORES</h3>
-                <p>Zelo pelo planeta, compromisso com a educação ambiental, inovação e incentivo à responsabilidade individual e coletiva.</p>
-            </div>
+    <section id="strip-informations" class="section">
+        <div class="strip-cards">
+            <img src="src/img/icons/missao.png" alt="alvo">
+            <h2>MISSÃO</h2>
+            <p>Promover a sustentabilidade por meio da tecnologia, incentivando o descarte correto de resíduos através de recompensas.</p>
         </div>
-        <div class="recycle-impact">
-            <h2>Impacto da Reciclagem</h2>
-            <div class="stats-container">
-                <div class="stat">
-                    <h3>Reciclagem</h3>
-                    <p><span id="recycling-stat" class="stat-number">0</span>%</p>
+        <div class="strip-cards">
+            <img src="src/img/icons/visao.png" alt="visão">
+            <h2>VISÃO</h2>
+            <p>Ser referência nacional em soluções digitais para reciclagem, construindo uma cultura ecológica acessível, vantajosa e colaborativa.</p>
+        </div>
+        <div class="strip-cards">
+            <img src="src/img/icons/valores.png" alt="valores">
+            <h2>VALORES</h2>
+            <p>Zelo pelo planeta, compromisso com a educação ambiental, inovação e incentivo à responsabilidade individual e coletiva.</p>
+        </div>
+    </section>
+
+    <section id="recycle" class="section">
+        <div id="recycle-container" style="max-width: 130rem; margin: 0 auto;">
+            <div id="recycle-content">
+                <h2>A Reciclagem</h2>
+                <p>
+                    Reciclar é essencial para um futuro mais sustentável. Ao reaproveitar materiais, evitamos desperdícios, preservamos recursos naturais e reduzimos os danos ao meio ambiente. Além disso, a reciclagem gera empregos, fortalece a economia e diminui a necessidade de extrair novos recursos, protegendo a natureza e beneficiando a sociedade.
+                </p>
+                <br>
+                <p>
+                    A Reciclagem é uma forma de reaproveitamento de matéria-prima descartada. Nesse sentido, reciclar significa diminuir a quantidade de resíduos provenientes dos produtos consumidos pelo homem.
+                </p>
+            </div>
+            <div class="carousel-wrapper">
+                <button class="carousel-btn prev-btn">&#10094;</button>
+
+                <div class="carousel" id="recycle-slider">
+                    <!-- CARD AZUL -->
+                    <div class="recycle-card blue">
+                        <img src="src/img/recycle/papel.webp" alt="">
+                        <h3>Papel (Azul)</h3>
+                        <p>Descarte aqui papéis, jornais, caixas de papelão, embalagens de papel. Evite papel engordurado ou sujo.</p>
+                    </div>
+                    <!-- CARD VERMELHO -->
+                    <div class="recycle-card red">
+                        <img src="src/img/recycle/plastico.webp" alt="">
+                        <h3>Plástico (Vermelho)</h3>
+                        <p>Descarte garrafas PET, embalagens plásticas, sacolas, copos descartáveis. Lave antes de descartar.</p>
+                    </div>
+                    <!-- CARD VERDE -->
+                    <div class="recycle-card green">
+                        <img src="src/img/recycle/vidro.webp" alt="">
+                        <h3>Vidro (Verde)</h3>
+                        <p>Descarte potes de vidro, garrafas, copos de vidro. Evite espelhos e vidros temperados.</p>
+                    </div>
+                    <!-- CARD AMARELO -->
+                    <div class="recycle-card yellow">
+                        <img src="src/img/recycle/metal.webp" alt="">
+                        <h3>Metal (Amarelo)</h3>
+                        <p>Latas de alumínio, panelas sem cabo, pregos, parafusos. Evite metais contaminados.</p>
+                    </div>
+                    <!-- CARD CINZA -->
+                    <div class="recycle-card gray">
+                        <img src="src/img/recycle/unrecycle.webp" alt="">
+                        <h3>Resíduos não recicláveis (Cinza)</h3>
+                        <p>Restos de varrição, papel higiênico, fraldas, guardanapos sujos. Devem ir para o aterro sanitário.</p>
+                    </div>
+                    <!-- CARD MARROM -->
+                    <div class="recycle-card brown">
+                        <img src="src/img/recycle/organ.webp" alt="">
+                        <h3>Orgânico (Marrom)</h3>
+                        <p>Restos de alimentos, cascas de frutas, folhas e galhos. Ideal para compostagem.</p>
+                    </div>
                 </div>
-                <div class="stat">
-                    <h3>Poluição</h3>
-                    <p><span id="pollution-stat" class="stat-number">100</span>%</p>
-                </div>
+
+                
+                <button class="carousel-btn next-btn">&#10095;</button>
             </div>
         </div>
     </section>
 
-    <section id="benefits" class="section">   
-        <p>
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-          
+    <section id="strip-informations re" class="section re">
+        <div class="strip-cards re">
+            <img src="src/img/icons/reciclar.png" alt="alvo">
+            <h2>Reciclagem</h2>
+            <p><span id="recycling-stat" class="stat-number">0</span>%</p>
+        </div>
+        <div class="strip-cards re">
+            <img src="src/img/icons/lixo.png" alt="visão">
+            <h2>Poluição</h2>
+            <p><span id="pollution-stat" class="stat-number">100</span>%</p>
+        </div>
     </section>
+
+    <section id="benefits" class="section">
+        <div id="benefits-container">
+            <div id="benefits-img">
+                <img src="src/img/benefits.png" alt="">
+            </div>
+            <div id="benefits-content">
+                <h2>Benefícios</h2>
+                <p> Com a <strong>ZeluS</strong>, reciclar vai além do cuidado com o meio ambiente — se torna uma experiência recompensadora. A cada vez que você descarta corretamente seus resíduos em um de nossos <strong>ecopontos parceiros</strong>, você acumula pontos que são computados automaticamente na sua conta.</p>
+
+                <p> Esses <strong>pontos ZeluS</strong> funcionam como uma moeda ecológica. Quanto mais você recicla, mais pontos você ganha. Cada tipo de resíduo possui uma pontuação específica, incentivando ainda mais o descarte consciente e a separação correta dos materiais.</p>
+
+                <p> Os pontos acumulados podem ser trocados por <strong>cupons de desconto</strong> em serviços essenciais, como <strong>contas de energia, água e até transporte público</strong>, dependendo da sua cidade. É a sustentabilidade gerando impacto direto na sua rotina — no bolso e no planeta.</p>
+            </div>
+        </div>
+    </section>
+
     <footer class="main-footer">
         <div class="footer-content">
             <div class="team">
@@ -103,27 +170,28 @@
                 <div class="team-members">
                     <div class="member">
                         <img src="src/img/member1.jpg" alt="Colaborador 1">
-                        <a href="https://www.linkedin.com/in/colaborador1" target="_blank">Colaborador 1</a>
+                        <a href="https://www.linkedin.com/in/colaborador1" target="_blank"><i class="fa-brands fa-linkedin"></i> Colaborador 1</a>
                     </div>
                     <div class="member">
                         <img src="src/img/member2.jpg" alt="Colaborador 2">
-                        <a href="https://www.linkedin.com/in/colaborador2" target="_blank">Colaborador 2</a>
+                        
+                        <a href="https://www.linkedin.com/in/colaborador2" target="_blank"> <i class="fa-brands fa-linkedin"></i> Colaborador 2</a>
                     </div>
                     <div class="member">
                         <img src="src/img/member3.jpg" alt="Colaborador 3">
-                        <a href="https://www.linkedin.com/in/colaborador3" target="_blank">Colaborador 3</a>
+                        <a href="https://www.linkedin.com/in/colaborador3" target="_blank"> <i class="fa-brands fa-linkedin"></i> Colaborador 3</a>
                     </div>
                     <div class="member">
                         <img src="src/img/member4.jpg" alt="Colaborador 4">
-                        <a href="https://www.linkedin.com/in/colaborador4" target="_blank">Colaborador 4</a>
+                        <a href="https://www.linkedin.com/in/colaborador4" target="_blank"> <i class="fa-brands fa-linkedin"></i> Colaborador 4</a>
                     </div>
                     <div class="member">
                         <img src="src/img/member5.jpg" alt="Colaborador 5">
-                        <a href="https://www.linkedin.com/in/colaborador5" target="_blank">Colaborador 5</a>
+                        <a href="https://www.linkedin.com/in/colaborador5" target="_blank"> <i class="fa-brands fa-linkedin"></i> Colaborador 5</a>
                     </div>
                     <div class="member">
                         <img src="src/img/member6.jpg" alt="Colaborador 6">
-                        <a href="https://www.linkedin.com/in/colaborador6" target="_blank">Colaborador 6</a>
+                        <a href="https://www.linkedin.com/in/colaborador6" target="_blank"> <i class="fa-brands fa-linkedin"></i> Colaborador 6</a>
                     </div>
                 </div>
             </div>
@@ -131,8 +199,8 @@
                 <p>&copy; 2025 ZeluS. Todos os direitos reservados.</p>
             </div>
         </div>
-    </footer> -->
+    </footer>
     <script src="src/js/main.js"></script>
 
 </body>
-</html>
+</html> 
