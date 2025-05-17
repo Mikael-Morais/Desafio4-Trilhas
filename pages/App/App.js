@@ -2,34 +2,41 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuItems = document.querySelectorAll(".menu li");
   const content = document.querySelector(".content");
   const telas = ["home.html", "zmapa.html", "dashboard.html", "troca.html", "admin-registro.html", "registroreciclagem.html", "test.html"];
-
-  function loadPage(idx) {
-    fetch(telas[idx])
+  function loadPage(url) {
+    fetch(url)
       .then((res) => res.text())
       .then((html) => {
-        content.innerHTML = html;
-        // Se for home.html, injeta o script do gráfico
-        if (telas[idx] === "home.html") {
+        document.querySelector(".content").innerHTML = html;
+
+        // carregue o home.js manualmente
+        if (url.includes("home.html")) {
           const script = document.createElement("script");
           script.src = "/pages/App/home.js";
-          script.type = "text/javascript";
-          content.appendChild(script);
+          script.onload = () => {
+            if (typeof initCharts === "function") initCharts();
+          };
+          document.body.appendChild(script);
+        } else {
+          // chamar initCharts se existir
+          if (typeof initCharts === "function") initCharts();
         }
-      })
-      .catch(() => (content.innerHTML = "<div>Erro ao carregar tela.</div>"));
+      });
   }
-
+  // Menu lateral - troca de páginas
   menuItems.forEach((item, idx) => {
-    item.addEventListener("click", () => {
-      menuItems.forEach((i) => i.classList.remove("active"));
-      item.classList.add("active");
-      loadPage(idx);
+    item.addEventListener("click", function () {
+      menuItems.forEach((li) => li.classList.remove("active"));
+      this.classList.add("active");
+      if (telas[idx]) {
+        loadPage(`/pages/App/html/${telas[idx]}`);
+      }
     });
   });
 
-  // Carrega a tela inicial (home)
-  loadPage(0);
+  // página inicial
+  loadPage("/pages/App/html/home.html");
 
+  //  manipulação de lista de pedidos (se existir)
   document.querySelectorAll(".pedidos-lista li").forEach((item) => {
     item.addEventListener("click", function () {
       document.querySelectorAll(".pedidos-lista li").forEach((li) => li.classList.remove("selected"));
