@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   const menuItems = document.querySelectorAll(".menu li");
   const content = document.querySelector(".content");
+  const btnRegistrar = document.querySelector(".btn-registrar");
   const telas = ["home.html", "zmapa.html", "dashboard.html", "admin-registro.html", "troca.html", "registroreciclagem.html"];
+
   function loadPage(url) {
     fetch(url)
       .then((res) => res.text())
@@ -10,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (url.includes("admin-registro.html")) {
           window.initAdminRegistro();
         }
-        // carregue o home.js manualmente
         if (url.includes("home.html")) {
           const script = document.createElement("script");
           script.src = "/pages/App/home.js";
@@ -19,12 +20,12 @@ document.addEventListener("DOMContentLoaded", function () {
           };
           document.body.appendChild(script);
         } else {
-          // chamar initCharts se existir
           if (typeof initCharts === "function") initCharts();
         }
       });
   }
-  // Menu lateral - troca de páginas
+
+  // menu lateral que trocas as paginas
   menuItems.forEach((item, idx) => {
     item.addEventListener("click", function () {
       menuItems.forEach((li) => li.classList.remove("active"));
@@ -35,8 +36,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // substitui o case, roda a primeira tela
-  fetch(telas[0])
-    .then((res) => res.text())
-    .then((html) => (content.innerHTML = html));
+  // botão Registrar Reciclagem
+  if (btnRegistrar) {
+    btnRegistrar.addEventListener("click", function () {
+      // tira a seleção do menu
+      menuItems.forEach((li) => li.classList.remove("active"));
+      loadPage("/pages/App/html/registroreciclagem.html");
+    });
+  }
+
+  // carrega a primeira tela que é a home
+  loadPage(`/pages/App/html/${telas[0]}`);
 });
