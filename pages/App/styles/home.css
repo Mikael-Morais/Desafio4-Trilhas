@@ -73,13 +73,10 @@ body {
   height: 100%;
 }
 
-.canva-grafico,
-.canva-grafico-pizza {
-  height: 70%;
+.grafico-coluna,
+.grafico-pizza {
   width: 100%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  max-height: 120px;
 }
 
 .container-coluna {
