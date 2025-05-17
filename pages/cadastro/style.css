@@ -1,0 +1,305 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('img/floresta.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+#container-cadastro {
+    width: 60vw;
+    min-height: 100vh;
+    background-color: #311D00C0;
+    padding: 10px 40px 120px 40px;
+    color: #E0E0E0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.etapa, .etapa-ativa {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    padding-top: 20px;
+}
+
+#etapa-tipousuario {
+    justify-content: center;
+    padding-top: 40px; 
+}
+
+#etapa-tipousuario img[src="img/logo-zelus.png"] {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+#etapa-tipousuario h3 {
+    margin-bottom: 40px;
+    text-align: center;
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 1.3em;
+}
+
+#etapa-tipousuario .botao-colaborador,
+#etapa-tipousuario .botao-administrador {
+    width: 60%;
+    max-width: 300px;
+    padding: 15px 20px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-bottom: 20px;
+    border: none;
+}
+
+#etapa-tipousuario .botao-colaborador {
+    background-color: #264A32;
+    color: #E0E0E0;
+    border: 2px solid #3aa555;
+}
+
+#etapa-tipousuario .botao-colaborador:hover {
+    background-color: #3aa555;
+    transform: translateY(-2px);
+}
+
+#etapa-tipousuario .botao-administrador {
+    background-color: #4F3516;
+    color: #E0E0E0;
+}
+
+#etapa-tipousuario .botao-administrador:hover {
+    background-color: #6A461F;
+    transform: translateY(-2px);
+}
+
+#etapa-tipousuario h5 {
+    margin-top: 30px;
+    font-size: 0.95em;
+}
+
+#etapa-tipousuario h5 a {
+    color: #264A32;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+#etapa-tipousuario h5 a:hover {
+    color: #3aa555;
+    text-decoration: underline;
+}
+
+
+.etapa {
+    display: none;
+}
+
+.etapa-ativa {
+    display: flex;
+}
+
+.etapa-ativa img[src="img/logo.png"],
+.etapa img[src="img/logo.png"] {
+    max-width: 75px;
+    height: auto;
+    margin-top: 30px;
+    margin-bottom: 8px;
+}
+.etapa-ativa h3,
+.etapa h3 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+}
+
+.etapa-ativa form,
+.etapa form {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 00px;
+}
+
+.etapa-ativa form div,
+.etapa form div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.etapa-ativa form label,
+.etapa form label {
+    margin-bottom: 0px;
+    margin-left: 20px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.etapa-ativa form input[type="email"],
+.etapa-ativa form input[type="text"],
+.etapa-ativa form input[type="number"],
+.etapa-ativa form input[type="password"],
+.etapa-ativa form input[type="date"],
+.etapa form input[type="email"],
+.etapa form input[type="text"],
+.etapa form input[type="number"],
+.etapa form input[type="password"],
+.etapa form input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #555;
+    border-radius: 40px;
+    background-color: #FFFFFF;
+    color: #444444;
+    font-family: 'Poppins', sans-serif;
+}
+
+.etapa-ativa form input::placeholder,
+.etapa form input::placeholder {
+  color: #a0a0a0;
+  font-style: italic;
+  opacity: 1;
+  text-align: center;
+}
+
+.botao-voltar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    color: #E0E0E0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    z-index: 20;
+}
+
+
+.botao-voltar img {
+    width: 45px;
+    margin-right: 8px;
+}
+
+.botao-confirmar {
+    background-color: #264A32;
+    color: #E0E0E0;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.etapa-ativa .botao-confirmar {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    z-index: 10;
+}
+
+.botao-confirmar:hover {
+    background-color: #00796B;
+}
+
+#funcao-administrador .mensagem-em-breve {
+    font-family: 'Merriweather', serif;
+    font-size: 2em;
+    font-weight: 700;
+    color: #E0E0E0;
+    text-align: center;
+    margin-top: 20vh;
+}
+
+
+@media (max-width: 700px) {
+    #container-cadastro {
+        width: 100vw;
+        padding: 10px 15px 80px 15px;
+    }
+
+    #etapa-tipousuario .botao-colaborador,
+    #etapa-tipousuario .botao-administrador {
+        width: 80%;
+    }
+}
+
+#etapa-email #form-email input[type="email"] {
+    max-width: 450px;
+}
+
+#etapa-email #form-email {
+    gap: 5vh;
+    margin-top: 15vh;
+    margin-bottom: 100px;
+}
+
+#etapa-conta #form-conta input[type="email"] {
+    max-width: 450px;
+}
+
+#etapa-conta #form-conta {
+    gap: 5vh;
+    margin-top: 9vh;
+    margin-bottom: 100px;
+}
+
+#etapa-pessoal #form-pessoal input[type="email"] {
+    max-width: 450px;
+}
+
+#etapa-pessoal #form-pessoal {
+    gap: 5vh;
+    margin-top: 8vh;
+    margin-bottom: 100px;
+}
+
+.input-erro {
+    border: 2px solid #BD0000 !important;
+    background-color: #FFBBBB !important;
+}
+
+.label-erro {
+    color: #CE0000 !important;
+    font-weight: bold;
+}
+
+.mensagem-erro {
+    color: #CE0000;
+    font-size: 0.85em;
+    margin-top: 4px;
+    display: block;
+    margin-left: 20px;
+    text-align: left;
+}
