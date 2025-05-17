@@ -1,0 +1,89 @@
+:root {
+  --font-main: "Inter", Inter, sans-serif;
+  --font-size-sidebar: 13px;
+  --font-size-subtitle: 16px;
+  --font-size-logo: 22px;
+  --font-size-user: 16px;
+  --color-bg: #d2d2d2;
+  --color-sidebar-bg: #fff;
+  --color-primary: #59a098;
+  --color-primary-light: #d9d9d9;
+  --color-settings: #61677f;
+  --color-white: #fff;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+.card-eco {
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+
+.card-eco:hover {
+  transform: translateY(-5px);
+}
+
+.map-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  pointer-events: none; /* remove interatividade do mapa */
+}
+
+.card-body {
+  padding: 16px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-primary); /* ou o que preferir */
+}
+
+.card-text {
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--color-settings);
+}
+
+.details-btn {
+  align-self: flex-start;
+  padding: 10px 20px;
+  border: none;
+  background-color: var(--color-primary);
+  color: var(--color-sidebar-bg);
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+}
+
+.details-btn:hover {
+  background-color: #3e706a;
+}
