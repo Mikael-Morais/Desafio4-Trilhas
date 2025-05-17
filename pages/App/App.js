@@ -1,13 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
   const menuItems = document.querySelectorAll(".menu li");
   const content = document.querySelector(".content");
-  const telas = ["home.html", "zmapa.html", "dashboard.html", "troca.html", "admin-registro.html", "registroreciclagem.html", "test.html"];
+  const telas = ["home.html", "zmapa.html", "dashboard.html", "admin-registro.html", "troca.html", "registroreciclagem.html"];
   function loadPage(url) {
     fetch(url)
       .then((res) => res.text())
       .then((html) => {
         document.querySelector(".content").innerHTML = html;
-
+        if (url.includes("admin-registro.html")) {
+          window.initAdminRegistro();
+        }
         // carregue o home.js manualmente
         if (url.includes("home.html")) {
           const script = document.createElement("script");
@@ -37,5 +39,4 @@ document.addEventListener("DOMContentLoaded", function () {
   fetch(telas[0])
     .then((res) => res.text())
     .then((html) => (content.innerHTML = html));
-
 });
