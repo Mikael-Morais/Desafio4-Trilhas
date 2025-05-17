@@ -1,0 +1,214 @@
+:root {
+  --font-main: "Inter", Inter, sans-serif;
+  --font-size-sidebar: 13px;
+  --font-size-subtitle: 16px;
+  --font-size-logo: 22px;
+  --font-size-user: 16px;
+  --color-bg: #d2d2d2;
+  --color-sidebar-bg: #fff;
+  --color-primary: #59a098;
+  --color-primary-light: #d9d9d9;
+  --color-settings: #61677f;
+  --color-white: #fff;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  background: var(--color-bg);
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 300px;
+  background: var(--color-sidebar-bg);
+  padding: 16px 0 0 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+
+.logo img {
+  width: 34px;
+  height: 34px;
+}
+
+.logo h1 {
+  font-size: var(--font-size-logo);
+  color: var(--color-primary);
+  margin: 0;
+  font-weight: 600;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  margin: 0;
+}
+.menu li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  color: var(--color-primary);
+  font-size: var(--font-size-sidebar);
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 4px;
+  transition: background 0.15s;
+  background: none;
+  font-weight: 400;
+}
+
+.menu li.active,
+.menu li:hover {
+  background: var(--color-primary-light);
+  font-weight: 500;
+}
+
+.btn-registrar {
+  margin: 16px 0;
+  padding: 12px 14px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: 5px;
+  font-size: var(--font-size-sidebar);
+  cursor: pointer;
+  width: 65%;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+  box-shadow: none;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  margin-bottom: 8px;
+  width: 95%;
+}
+
+.user img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-size: var(--font-size-user);
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.settings {
+  color: var(--color-settings);
+  font-size: var(--font-size-sidebar);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 12px;
+  gap: 12px;
+  background-color: var(--color-bg);
+
+}
+
+.grafico{
+ display: flex;
+ flex-direction: row;
+ height: 40vh;
+ border-radius: 10px;
+ gap: 12px;
+}
+
+.container-grafico-coluna{
+  background-color: var(--color-white);
+  width: 60%;
+  border-radius: 10px;
+  height: 100%;
+}
+
+.canva-grafico {
+  height: 80%;
+  width: 80%;
+}
+
+.container-coluna{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  padding: 12px;
+  height: 8%;
+  align-items: center;
+  color: var(--color-primary);
+  font-size: var(--font-main);
+}
+
+ .styles-bar{
+  background-color: var(--color-primary) ;
+  width: 8px;
+  color:  var(--color-primary);
+  height: 100%;
+  border-radius: 8%
+ }
+
+.container-grafico-pizza{
+  background-color: var(--color-white);
+  height: 100%;
+  width: 40%;
+  border-radius: 10px;
+}
+
+
+.receita{
+  height: 60vh;
+  background-color: var(--color-white);
+  border-radius: 10px;
+  width: 100%;
+}
+
+.container-tabela{
+  width: 100%; 
+  height: 100%;
+  padding: 12px;
+  
+}
+
+.container-tb{
+  width: 100%;
+  color: var(--color-primary);
+}
+
+.grafico-coluna{
+  width: 100%;
+  height: 40%;
+}
