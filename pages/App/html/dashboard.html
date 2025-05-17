@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+   <link rel="stylesheet" href="/pages/App/styles/Dashboard.css" />
+   <script></script>
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <div class="logo">
+          <img src="/pages/App/assets/logoZelus.png" alt="ZeluS Logo" />
+          <h1>ZeluS</h1>
+        </div>
+
+        <nav class="menu">
+          <ul>
+            <li class="active"><i class="fa fa-dashboard"></i> Dashboard</li>
+            <li><i class="fa fa-map"></i> Z-Mapa</li>
+            <li><i class="fa fa-exchange-alt"></i> Troca de Pontos</li>
+            <li><i class="fa fa-book"></i> EcoCursos</li>
+            <li><i class="fa fa-ban"></i> Denúncias</li>
+          </ul>
+        </nav>
+
+        <button class="btn-registrar"><i class="fa fa-plus"></i> Registrar Reciclagem</button>
+
+        <div class="user">
+          <img src="/pages/App/assets/profile.png" alt="Foto do usuário" />
+          <div class="user-info">
+            <span class="user-name">Paulo Rafael Costa Silva</span>
+          </div>
+        </div>
+
+        <div class="settings"><i class="fa fa-cog"></i> Configurações</div>
+      </aside>
+
+      <main class="content">
+        <section class="grafico">
+    
+          <div class="container-grafico-coluna">
+            <div class="container-coluna">
+              <div class="styles-bar">s</div>
+              <span>Reciclados </span>
+            </div>
+            <div class="canva-grafico">
+              <canvas class="grafico-coluna"></canvas>
+            </div>
+          </div>
+
+          <div class="container-grafico-pizza">
+            <div class="container-coluna">
+              <div class="styles-bar">s</div>
+              <span>Materiais Reciclados</span>
+            </div>
+            <div class="canva-grafico-pizza">
+              <canva class="grafico-pizza"></canva>
+            </div>
+          </div>
+        </section>
+        
+
+        <section class="receita"> 
+            <div class="container-coluna">
+              <div class="styles-bar">s</div>
+              <span> Receita</span>
+            </div>
+           <div class="container-tabela">
+            <table class="container-tb">
+                  <tr>
+                    <th>Data</th>
+                    <th>ID</th>
+                    <th>Quantidade</th>
+                    <th>Descrição</th>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+            </table>
+           </div>
+           </div>
+        </section>
+       
+      </main>
+    </div>
+    <script src="../Dashboard.js"></script>
+  </body>
+</html>
