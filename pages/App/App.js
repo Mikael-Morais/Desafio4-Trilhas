@@ -33,19 +33,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // página inicial
-  loadPage("/pages/App/html/home.html");
+  // substitui o case, roda a primeira tela
+  fetch(telas[0])
+    .then((res) => res.text())
+    .then((html) => (content.innerHTML = html));
 
-  //  manipulação de lista de pedidos (se existir)
-  document.querySelectorAll(".pedidos-lista li").forEach((item) => {
-    item.addEventListener("click", function () {
-      document.querySelectorAll(".pedidos-lista li").forEach((li) => li.classList.remove("selected"));
-      this.classList.add("selected");
-
-      document.getElementById("nome-transferencia").textContent = this.dataset.nome;
-      document.getElementById("data-transferencia").textContent = this.dataset.data;
-      document.getElementById("id-transferencia").textContent = this.dataset.id;
-      document.getElementById("img-transferencia").src = this.dataset.img;
-    });
-  });
 });
