@@ -73,12 +73,6 @@ body {
   height: 100%;
 }
 
-.grafico-coluna,
-.grafico-pizza {
-  width: 100%;
-  max-height: 120px;
-}
-
 .container-coluna {
   width: 100%;
   display: flex;
@@ -132,5 +126,5 @@ body {
 .grafico-pizza {
   width: 100%;
   height: 100%;
-  max-height: 120px;
+  max-height: 170px;
 }
