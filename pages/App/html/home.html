@@ -1,4 +1,60 @@
-<h2 class="titulo-ecocursos"><i class="fa fa-home"></i> Home</h2>
-<div class="card large">
-<p>teste ... teste</p>
+<link rel="stylesheet" href="/pages/App/styles/home.css" />
+
+<div class="content home-content">
+  <section class="grafico">
+    <div class="container-grafico-coluna">
+      <div class="container-coluna">
+        <div class="styles-bar"></div>
+        <span>Reciclados</span>
+      </div>
+      <div class="canva-grafico">
+        <canvas class="grafico-coluna" height="120"></canvas>
+      </div>
+    </div>
+
+    <div class="container-grafico-pizza">
+      <div class="container-coluna">
+        <div class="styles-bar"></div>
+        <span>Materiais Reciclados</span>
+      </div>
+      <div class="canva-grafico-pizza">
+        <canvas class="grafico-pizza" height="120"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <section class="receita">
+    <div class="container-coluna">
+      <div class="styles-bar"></div>
+      <span>Receita</span>
+    </div>
+    <div class="container-tabela">
+      <table class="container-tb">
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>ID</th>
+            <th>Quantidade</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>--</td>
+            <td>--</td>
+            <td>--</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td>--</td>
+            <td>--</td>
+            <td>--</td>
+            <td>--</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+<script src="../home.js"></script>
