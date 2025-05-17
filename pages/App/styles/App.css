@@ -12,6 +12,10 @@
   --color-white: #fff;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: var(--font-main);
@@ -21,6 +25,8 @@ body {
 .container {
   display: flex;
   height: 100vh;
+  position: relative;
+  margin-left: 300px;
 }
 
 .sidebar {
@@ -29,6 +35,10 @@ body {
   padding: 16px 0 0 16px;
   display: flex;
   flex-direction: column;
+  position: fixed;
+  height: 100%;
+  left: 0;
+  top: 0;
 }
 
 .logo {
@@ -74,6 +84,7 @@ body {
 .menu li.active,
 .menu li:hover {
   background: var(--color-primary-light);
+  margin-right: 16px;
   font-weight: 500;
 }
 
@@ -92,6 +103,11 @@ body {
   gap: 6px;
   justify-content: center;
   box-shadow: none;
+  transition: 0.2s;
+}
+
+.btn-registrar:hover {
+  background: #3e706a;
 }
 
 .user {
@@ -133,27 +149,54 @@ body {
 
 .content {
   flex: 1;
-  background: var(--color-sidebar-bg);
+  background: transparent;
   margin: 12px;
   border-radius: 10px;
-  padding: 20px;
+  padding: 10px 20px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
-  display: flex;
   flex-direction: column;
 }
 
-.titulo-ecocursos {
+.titulo {
   color: var(--color-primary);
   font-size: var(--font-size-subtitle);
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   gap: 8px;
 }
+.subtitulo {
+  font-size: 14px;
+  color: var(--color-settings);
+  margin-bottom: 16px;
+}
 
-.card.large {
-  flex: 1;
+.header-section {
+  width: 100%;
   background: var(--color-sidebar-bg);
-  border-radius: 10px;
-  box-shadow: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+}
+
+.campo-pesquisa {
+  padding: 7px;
+  margin: 7px 0;
+  border-radius: 8px;
+  border: solid 1px #61677f67;
+
+  & input {
+    outline: none;
+    border: none;
+    font-family: var(--font-main);
+    margin-left: 10px;
+    width: 97%;
+    font-size: 15px;
+    color: var(--color-settings);
+    font-weight: 500;
+  }
+  
+  & input:focus~.campo-pesquisa {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
 }
