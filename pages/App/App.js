@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuItems = document.querySelectorAll(".menu li");
   const content = document.querySelector(".content");
   const btnRegistrar = document.querySelector(".btn-registrar");
-  const telas = ["home.html", "zmapa.html", "dashboard.html", "admin-registro.html", "troca.html", "registroreciclagem.html"];
+  const telas = ["home.html", "zmapa.html", "troca.html", "admin-registro.html", "registroreciclagem.html"];
 
   function loadPage(url) {
     fetch(url)
