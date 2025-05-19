@@ -19,6 +19,10 @@ document.addEventListener("DOMContentLoaded", function () {
             if (typeof initCharts === "function") initCharts();
           };
           document.body.appendChild(script);
+        } else if (url.includes("troca.html")) {
+          const script = document.createElement("script");
+          script.src = "/pages/App/troca-pontos.js";
+          document.body.appendChild(script);
         } else {
           if (typeof initCharts === "function") initCharts();
         }
@@ -47,4 +51,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // carrega a primeira tela que é a home
   loadPage(`/pages/App/html/${telas[0]}`);
+
+  // coloca o nome do usuario logado na tela
+  const nomeUsuario = localStorage.getItem("usuarioLogado");
+  if (nomeUsuario) {
+    const spanNome = document.querySelector(".user-name");
+    if (spanNome) {
+      spanNome.textContent = nomeUsuario;
+    }
+  }
 });
