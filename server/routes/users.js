@@ -26,9 +26,12 @@ router.post("/cadastro", async (req, res) => {
 router.post("/login", async (req, res) => {
   const { usuario, senha } = req.body;
   try {
-    const user = await db.query("SELECT * FROM usuarios WHERE usuario = $1 AND senha = $2", [usuario, senha]);
+    const user = await db.query(`SELECT * FROM usuarios WHERE usuario='${usuario}' AND senha='${senha}'`);
+
+    console.log(JSON.stringify(user.rows[0]));
+    
     if (user.rows.length > 0) {
-      res.json({ sucesso: true });
+      res.json({ sucesso: true, user: JSON.stringify(user.rows[0])});
     } else {
       res.status(401).json({ erro: "Usuário ou senha inválidos" });
     }

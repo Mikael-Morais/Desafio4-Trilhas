@@ -53,11 +53,11 @@ document.addEventListener("DOMContentLoaded", function () {
   loadPage(`/pages/App/html/${telas[0]}`);
 
   // coloca o nome do usuario logado na tela
-  const nomeUsuario = localStorage.getItem("usuarioLogado");
+  const nomeUsuario = JSON.parse(localStorage.getItem("usuarioLogado"));
   if (nomeUsuario) {
     const spanNome = document.querySelector(".user-name");
     if (spanNome) {
-      spanNome.textContent = nomeUsuario;
+      spanNome.textContent = nomeUsuario.nome;
     }
   }
 });
