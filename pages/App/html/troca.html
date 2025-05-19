@@ -1,234 +1,235 @@
-<link rel="stylesheet" href="../styles/troca-pontos.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="../styles/troca-pontos.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 <section class="points-exchange">
-    <header class="points-exchange__header">
-        <div class="points-exchange__title">
-            <div class="title-content">
-                <h1>Troca de Pontos</h1>
-                <p class="title-description">Use seus pontos ganhos com suas reciclagens e troque por recompensas! Seu trabalho para nos ajudar a tornar o mundo um lugar melhor merece ser recompensado.</p>
-            </div>
-        </div>
-            <div class="points-exchange__points-display">
-                <div class="points-label">seus pontos</div>
-                <div class="points-container">
-                    <i class="fas fa-leaf leaf-icon"></i>
-                    <span class="points-value">1250</span>
-                </div>
-            </div>
-    </header>
-    
-    <div class="points-exchange__content">
-        <main class="points-exchange__items">
-            <section class="items-list" aria-labelledby="available-items-heading">
-                <h3 id="available-items-heading" class="visually-hidden">Itens disponíveis para troca</h3>
-                
-                <div class="items-grid">
-                    <!-- Item 1 -->
-                    <div class="item-card" data-categories="energy accounts">
-                        <img src="../assets/luz-desconto.png" alt="" class="item-image">
-                        <div class="item-content">
-                            <h4 class="item-name">Conta de Energia (15%)</h4>
-                            <p class="item-description">Economize até 15% na sua fatura de energia elétrica utilizando energia limpa.</p>
-                            <div class="item-footer">
-                                <span class="item-price">750 pontos</span>
-                                <button class="details-button">Detalhes</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Item 2 -->
-                    <div class="item-card" data-categories="public-transport transport">
-                        <img src="../assets/transporte-desconto.png" alt="" class="item-image">
-                        <div class="item-content">
-                            <h4 class="item-name">Transporte Público</h4>
-                            <p class="item-description">Adicione créditos ao seu cartão de transporte coletivo em cidades do Maranhão.</p>
-                            <div class="item-footer">
-                                <span class="item-price">500 pontos</span>
-                                <button class="details-button">Detalhes</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Item 3 -->
-                    <div class="item-card" data-categories="water accounts">
-                        <img src="../assets/agua-desconto.png" alt="" class="item-image">
-                        <div class="item-content">
-                            <h4 class="item-name">Conta de Água (50%)</h4>
-                            <p class="item-description">Reduza pela metade o valor da sua fatura mensal de água e esgoto.</p>
-                            <div class="item-footer">
-                                <span class="item-price">300 pontos</span>
-                                <button class="details-button">Detalhes</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Item 4 -->
-                        <div class="item-card" data-categories="food cupons">
-                        <img src="../assets/vocher-desconto.png" alt="" class="item-image">
-                        <div class="item-content">
-                            <h4 class="item-name">Vouchers de Alimentação (20%)</h4>
-                            <p class="item-description">Economize em suas compras com vouchers de desconto em supermercados locais.</p>
-                            <div class="item-footer">
-                                <span class="item-price">300 pontos</span>
-                                <button class="details-button">Detalhes</button>
-                            </div>
-                        </div>
-                    </div>
+  <header class="points-exchange__header">
+    <div class="points-exchange__title">
+      <div class="title-content">
+        <h1>Troca de Pontos</h1>
+        <p class="title-description">
+          Use seus pontos ganhos com suas reciclagens e troque por recompensas! Seu trabalho para nos ajudar a tornar o mundo um lugar
+          melhor merece ser recompensado.
+        </p>
+      </div>
+    </div>
+    <div class="points-exchange__points-display">
+      <div class="points-label">seus pontos</div>
+      <div class="points-container">
+        <i class="fas fa-leaf leaf-icon"></i>
+        <span class="points-value">1250</span>
+      </div>
+    </div>
+  </header>
 
-                    <!-- adicionar mais item -->
-                </div>
-            </section>
-        </main>
-        
-        <aside class="points-exchange__sidebar">
-            <div class="search-filters">
-                <div class="search-bar">
-                    <label for="item-search" class="visually-hidden">Pesquisar itens</label>
-                    <input type="text" id="item-search" placeholder="Pesquisar itens...">
-                </div>
-                <div class="filter-options">
-                    <h3 class="filter-title">Filtrar por</h3>
-                    
-                    <div class="filter-categories">
-                        <!-- Categoria 1 -->
-                        <div class="filter-category">
-                            <div class="category-title">Contas</div>
-                            <div class="filter-options-list">
-                                <div class="filter-option">
-                                    <input type="checkbox" id="filter-energy" checked>
-                                    <label for="filter-energy">Energia</label>
-                                </div>
-                                <div class="filter-option">
-                                    <input type="checkbox" id="filter-water" checked>
-                                    <label for="filter-water">Água</label>
-                                </div>
-                                <div class="filter-option">
-                                    <input type="checkbox" id="filter-gas" checked>
-                                    <label for="filter-gas">Gás</label>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Categoria 2 -->
-                        <div class="filter-category">
-                            <div class="category-title collapsed">Cupons</div>
-                            <div class="filter-options-list collapsed">
-                                <div class="filter-option">
-                                    <input type="checkbox" id="filter-food" checked>
-                                    <label for="filter-food">Alimentação</label>
-                                </div>
-                                <div class="filter-option">
-                                    <input type="checkbox" id="filter-retail" checked>
-                                    <label for="filter-retail">Varejo</label>
-                                </div>
-                                <div class="filter-option">
-                                    <input type="checkbox" id="filter-services" checked>
-                                    <label for="filter-services">Serviços</label>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Categoria 3 -->
-                        <div class="filter-category">
-                            <div class="category-title collapsed">Transporte</div>
-                            <div class="filter-options-list collapsed">
-                                <div class="filter-option">
-                                    <input type="checkbox" id="filter-public-transport" checked>
-                                    <label for="filter-public-transport">Público</label>
-                                </div>
-                                <div class="filter-option">
-                                    <input type="checkbox" id="filter-uber" checked>
-                                    <label for="filter-uber">uber</label>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Categoria 4 -->
-                        <div class="filter-category">
-                            <div class="category-title collapsed">Outros</div>
-                            <div class="filter-options-list collapsed">
-                                <div class="filter-option">
-                                    <input type="checkbox" id="filter-education" checked>
-                                    <label for="filter-education">Educação</label>
-                                </div>
-                                <div class="filter-option">
-                                    <input type="checkbox" id="filter-entertainment" checked>
-                                    <label for="filter-entertainment">Entretenimento</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  <div class="points-exchange__content">
+    <main class="points-exchange__items">
+      <section class="items-list" aria-labelledby="available-items-heading">
+        <h3 id="available-items-heading" class="visually-hidden">Itens disponíveis para troca</h3>
+
+        <div class="items-grid">
+          <!-- Item 1 -->
+          <div class="item-card" data-categories="energy accounts">
+            <img src="../assets/luz-desconto.png" alt="" class="item-image" />
+            <div class="item-content">
+              <h4 class="item-name">Conta de Energia (15%)</h4>
+              <p class="item-description">Economize até 15% na sua fatura de energia elétrica utilizando energia limpa.</p>
+              <div class="item-footer">
+                <span class="item-price">750 pontos</span>
+                <button class="details-button">Detalhes</button>
+              </div>
             </div>
-            
-            <div class="exchange-history">
-                <h3 class="history-title">Histórico de Trocas</h3>  
-                <div class="history-list" id="history-list">
-                    <div class="history-item">
-                        <div class="history-item-icon">
-                            <i class="fas fa-bolt"></i>
-                        </div>
-                        <div class="history-item-content">
-                            <div class="history-item-name">Conta de Energia (15%)</div>
-                            <div class="history-item-details">
-                                <span class="history-item-date">20/05/2023</span>
-                                <span class="history-item-points">-750 pontos</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="history-item">
-                        <div class="history-item-icon">
-                            <i class="fas fa-bus"></i>
-                        </div>
-                        <div class="history-item-content">
-                            <div class="history-item-name">Transporte Público</div>
-                            <div class="history-item-details">
-                                <span class="history-item-date">18/05/2023</span>
-                                <span class="history-item-points">-500 pontos</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <button class="clear-history" id="clear-history">
-                    <i class="fas fa-trash-alt"></i> Limpar Histórico
-                </button>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="item-card" data-categories="public-transport transport">
+            <img src="../assets/transporte-desconto.png" alt="" class="item-image" />
+            <div class="item-content">
+              <h4 class="item-name">Transporte Público</h4>
+              <p class="item-description">Adicione créditos ao seu cartão de transporte coletivo em cidades do Maranhão.</p>
+              <div class="item-footer">
+                <span class="item-price">500 pontos</span>
+                <button class="details-button">Detalhes</button>
+              </div>
             </div>
-        </aside>
-    </div>
-        <div class="modal-overlay" id="details-modal">
-        <div class="modal-container">
-            <div class="modal-header">
-                <h3 class="modal-title" id="modal-item-title">Detalhes do Item</h3>
-                <button class="modal-close" id="modal-close">&times;</button>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="item-card" data-categories="water accounts">
+            <img src="../assets/agua-desconto.png" alt="" class="item-image" />
+            <div class="item-content">
+              <h4 class="item-name">Conta de Água (50%)</h4>
+              <p class="item-description">Reduza pela metade o valor da sua fatura mensal de água e esgoto.</p>
+              <div class="item-footer">
+                <span class="item-price">300 pontos</span>
+                <button class="details-button">Detalhes</button>
+              </div>
             </div>
-            <div class="modal-content">
-                <img src="" alt="" class="modal-image" id="modal-item-image">
-                <p class="modal-description" id="modal-item-description"></p>
-                
-                <div class="modal-details">
-                    <div class="detail-row">
-                        <span class="detail-label">Valor em Pontos:</span>
-                        <span class="detail-value" id="modal-item-points"></span>
-                    </div>
-                    <div class="detail-row">
-                        <span class="detail-label">Categoria:</span>
-                        <span class="detail-value" id="modal-item-category"></span>
-                    </div>
-                    <div class="detail-row">
-                        <span class="detail-label">Validade:</span>
-                        <span class="detail-value" id="modal-item-validity">30 dias após a troca</span>
-                    </div>
-                </div>
-                
-                <div class="modal-actions">
-                    <button class="modal-button button-secondary" id="modal-cancel">Cancelar</button>
-                    <button class="modal-button button-primary" id="modal-exchange">Trocar Pontos</button>
-                </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="item-card" data-categories="food cupons">
+            <img src="../assets/vocher-desconto.png" alt="" class="item-image" />
+            <div class="item-content">
+              <h4 class="item-name">Vouchers de Alimentação (20%)</h4>
+              <p class="item-description">Economize em suas compras com vouchers de desconto em supermercados locais.</p>
+              <div class="item-footer">
+                <span class="item-price">300 pontos</span>
+                <button class="details-button">Detalhes</button>
+              </div>
             </div>
+          </div>
+
+          <!-- adicionar mais item -->
         </div>
+      </section>
+    </main>
+
+    <aside class="points-exchange__sidebar">
+      <div class="search-filters">
+        <div class="search-bar">
+          <label for="item-search" class="visually-hidden">Pesquisar itens</label>
+          <input type="text" id="item-search" placeholder="Pesquisar itens..." />
+        </div>
+        <div class="filter-options">
+          <h3 class="filter-title">Filtrar por</h3>
+
+          <div class="filter-categories">
+            <!-- Categoria 1 -->
+            <div class="filter-category">
+              <div class="category-title">Contas</div>
+              <div class="filter-options-list">
+                <div class="filter-option">
+                  <input type="checkbox" id="filter-energy" checked />
+                  <label for="filter-energy">Energia</label>
+                </div>
+                <div class="filter-option">
+                  <input type="checkbox" id="filter-water" checked />
+                  <label for="filter-water">Água</label>
+                </div>
+                <div class="filter-option">
+                  <input type="checkbox" id="filter-gas" checked />
+                  <label for="filter-gas">Gás</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Categoria 2 -->
+            <div class="filter-category">
+              <div class="category-title collapsed">Cupons</div>
+              <div class="filter-options-list collapsed">
+                <div class="filter-option">
+                  <input type="checkbox" id="filter-food" checked />
+                  <label for="filter-food">Alimentação</label>
+                </div>
+                <div class="filter-option">
+                  <input type="checkbox" id="filter-retail" checked />
+                  <label for="filter-retail">Varejo</label>
+                </div>
+                <div class="filter-option">
+                  <input type="checkbox" id="filter-services" checked />
+                  <label for="filter-services">Serviços</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Categoria 3 -->
+            <div class="filter-category">
+              <div class="category-title collapsed">Transporte</div>
+              <div class="filter-options-list collapsed">
+                <div class="filter-option">
+                  <input type="checkbox" id="filter-public-transport" checked />
+                  <label for="filter-public-transport">Público</label>
+                </div>
+                <div class="filter-option">
+                  <input type="checkbox" id="filter-uber" checked />
+                  <label for="filter-uber">uber</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Categoria 4 -->
+            <div class="filter-category">
+              <div class="category-title collapsed">Outros</div>
+              <div class="filter-options-list collapsed">
+                <div class="filter-option">
+                  <input type="checkbox" id="filter-education" checked />
+                  <label for="filter-education">Educação</label>
+                </div>
+                <div class="filter-option">
+                  <input type="checkbox" id="filter-entertainment" checked />
+                  <label for="filter-entertainment">Entretenimento</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="exchange-history">
+        <h3 class="history-title">Histórico de Trocas</h3>
+        <div class="history-list" id="history-list">
+          <div class="history-item">
+            <div class="history-item-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <div class="history-item-content">
+              <div class="history-item-name">Conta de Energia (15%)</div>
+              <div class="history-item-details">
+                <span class="history-item-date">20/05/2023</span>
+                <span class="history-item-points">-750 pontos</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="history-item">
+            <div class="history-item-icon">
+              <i class="fas fa-bus"></i>
+            </div>
+            <div class="history-item-content">
+              <div class="history-item-name">Transporte Público</div>
+              <div class="history-item-details">
+                <span class="history-item-date">18/05/2023</span>
+                <span class="history-item-points">-500 pontos</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="clear-history" id="clear-history"><i class="fas fa-trash-alt"></i> Limpar Histórico</button>
+      </div>
+    </aside>
+  </div>
+  <div class="modal-overlay" id="details-modal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-item-title">Detalhes do Item</h3>
+        <button class="modal-close" id="modal-close">&times;</button>
+      </div>
+      <div class="modal-content">
+        <img src="" alt="" class="modal-image" id="modal-item-image" />
+        <p class="modal-description" id="modal-item-description"></p>
+
+        <div class="modal-details">
+          <div class="detail-row">
+            <span class="detail-label">Valor em Pontos:</span>
+            <span class="detail-value" id="modal-item-points"></span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Categoria:</span>
+            <span class="detail-value" id="modal-item-category"></span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Validade:</span>
+            <span class="detail-value" id="modal-item-validity">30 dias após a troca</span>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button class="modal-button button-secondary" id="modal-cancel">Cancelar</button>
+          <button class="modal-button button-primary" id="modal-exchange">Trocar Pontos</button>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
-<script src="../troca-pontos.js"></script>
+<script src="/pages/App/troca-pontos.js"></script>
