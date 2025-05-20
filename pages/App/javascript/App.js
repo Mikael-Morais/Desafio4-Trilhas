@@ -1,33 +1,57 @@
 document.addEventListener("DOMContentLoaded", function () {
+
   const menuItems = document.querySelectorAll(".menu li");
-  const content = document.querySelector(".content");
   const btnRegistrar = document.querySelector(".btn-registrar");
   const telas = ["home.html", "zmapa.html", "troca.html", "admin-registro.html", "registroreciclagem.html"];
 
   function loadPage(url) {
+    let autenticado = JSON.parse(localStorage.getItem("logado"));
+    if (!autenticado) {
+      window.location.href = "../../auth/login.html";
+      return;
+    }
+
     fetch(url)
       .then((res) => res.text())
       .then((html) => {
         document.querySelector(".content").innerHTML = html;
+
+        const oldScript = document.getElementById("parcial-script");
+        if (oldScript) {
+          oldScript.remove();
+        }
+
+        // Decide qual script deve ser carregado
+        let scriptPath = "";
+
+        if (url.includes("home.html")) {
+          scriptPath = "/pages/App/javascript/home.js";
+        } else if (url.includes("registroreciclagem.html")) {
+          scriptPath = "/pages/App/javascript/registrar-recy.js";
+        } else if (url.includes("troca.html")) {
+          scriptPath = "/pages/App/javascript/troca-pontos.js";
+        }
+
+        if (scriptPath) {
+          const newScript = document.createElement("script");
+          newScript.src = scriptPath;
+          newScript.id = "parcial-script";
+          newScript.onload = () => {
+            if (scriptPath.includes("home.js") && typeof initCharts === "function") {
+              initCharts();
+            }
+          };
+          document.body.appendChild(newScript);
+        }
+
+        // Caso específico que não exige script externo
         if (url.includes("admin-registro.html")) {
           window.initAdminRegistro();
         }
-        if (url.includes("home.html")) {
-          const script = document.createElement("script");
-          script.src = "/pages/App/javascript/home.js";
-          script.onload = () => {
-            if (typeof initCharts === "function") initCharts();
-          };
-          document.body.appendChild(script);
-        } else if (url.includes("troca.html")) {
-          const script = document.createElement("script");
-          script.src = "/pages/App/javascript/troca-pontos.js";
-          document.body.appendChild(script);
-        } else {
-          if (typeof initCharts === "function") initCharts();
-        }
       });
   }
+
+
 
   // menu lateral que trocas as paginas
   menuItems.forEach((item, idx) => {

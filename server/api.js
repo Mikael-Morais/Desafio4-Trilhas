@@ -11,6 +11,6 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use('/api/usuarios', usuariosRoutes);
-app.use('/api/usuarios', reciclagemRoutes);
+app.use('/api/reciclagens', reciclagemRoutes);
 
 app.listen(3000, () => console.log("API rodando em http://localhost:3000"));
