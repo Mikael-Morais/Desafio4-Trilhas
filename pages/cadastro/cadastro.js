@@ -30,6 +30,7 @@ function confirmarEtapa(etapaAtualId, proximaEtapaId) {
 }
 function finalizarCadastro() {
   if (validarEtapa("etapa-conta")) {
+    const nome = document.getElementById("nomeCompleto").value;
     const usuario = document.getElementById("usuario").value;
     const senha = document.getElementById("senha").value;
     const confirmarSenha = document.getElementById("confirmarSenha").value;
@@ -39,10 +40,10 @@ function finalizarCadastro() {
       return;
     }
 
-    fetch("http://localhost:3000/api/usuarios", {
+    fetch("http://localhost:3000/api/usuarios/cadastro", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ usuario, senha }),
+      body: JSON.stringify({ nome, usuario, senha }),
     })
       .then((res) => {
         if (!res.ok) throw new Error("Erro ao cadastrar usuário");
