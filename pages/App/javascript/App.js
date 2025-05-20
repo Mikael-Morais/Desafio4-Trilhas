@@ -14,14 +14,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         if (url.includes("home.html")) {
           const script = document.createElement("script");
-          script.src = "/pages/App/home.js";
+          script.src = "/pages/App/javascript/home.js";
           script.onload = () => {
             if (typeof initCharts === "function") initCharts();
           };
           document.body.appendChild(script);
         } else if (url.includes("troca.html")) {
           const script = document.createElement("script");
-          script.src = "/pages/App/troca-pontos.js";
+          script.src = "/pages/App/javascript/troca-pontos.js";
           document.body.appendChild(script);
         } else {
           if (typeof initCharts === "function") initCharts();

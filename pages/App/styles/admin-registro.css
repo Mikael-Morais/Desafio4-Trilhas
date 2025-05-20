@@ -15,13 +15,11 @@
 .content__admin > * {
     box-sizing: border-box;
     max-height: 100%;
-    overflow: hidden;
 }
 .content__admin{
     font-family: var(--font-main);
     color: var(--color-primary);
     height: 100vh;
-    overflow-y: hidden;
 
     & h1{
         font-size: var(--font-size-subtitle);
