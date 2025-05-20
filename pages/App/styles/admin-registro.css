@@ -1,148 +1,124 @@
-/* Container principal do card */
-.transferencia-card {
-    background: var(--withe-color1);
-    border-radius: 1rem;
-    box-shadow: 0 2px 8px rgba(44, 44, 44, 0.08);
-    padding: 2rem 2.5rem;
-    margin-bottom: 2.5rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+:root {
+  --font-main: "Inter", Inter, sans-serif;
+  --font-size-sidebar: 13px;
+  --font-size-subtitle: 16px;
+  --font-size-logo: 22px;
+  --font-size-user: 16px;
+  --color-bg: #d2d2d2;
+  --color-sidebar-bg: #fff;
+  --color-primary: #59a098;
+  --color-primary-light: #d9d9d9;
+  --color-settings: #61677f;
+  --color-white: #fff;
+}
+.content__admin,
+.content__admin > * {
+    box-sizing: border-box;
+    max-height: 100%;
+    overflow: hidden;
+}
+.content__admin{
+    font-family: var(--font-main);
+    color: var(--color-primary);
+    height: 100vh;
+    overflow-y: hidden;
+
+    & h1{
+        font-size: var(--font-size-subtitle);
+    }
 }
 
-.transferencia-card h2 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 2rem;
-    color: var(--green1);
-    margin-bottom: 1.5rem;
-    gap: 0.8rem;
-}
-
-.transferencia-info {
+.content__admin__lista{
+    background-color: var(--color-white);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 20px;
+    height: 55vh;
+    border-radius: 10px;
+
 }
 
-.transferencia-dados {
-    width: 100%;
-    margin-bottom: 1rem;
-}
-
-.transferencia-dados ul {
+.content__admin__transferir{
     display: flex;
     flex-direction: row;
-    gap: 2rem;
-    list-style: disc inside;
-    padding: 0;
-    margin: 0 auto;
-    align-items: center;
-    justify-content: center;
+    height: 33vh;
+    gap: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.content__admin__info{
+  background-color: var(--color-white);
+  border-radius: 10px;
+  width: 60%;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(89, 160, 152, 0.08);
+
+  & h3 {
+text-align: center;
+  }
 }
 
-.transferencia-dados ul li {
-    font-size: 1.15rem;
-    color: var(--dark-color2);
-    background: var(--withe-color2);
-    border-radius: 0.4rem;
-    padding: 0.5rem 1.2rem;
-    display: flex;
-    align-items: center;
-}
 
-.transferencia-img img {
-    width: 140px;
+.content__admin__comprovante{
+background-color: var(--color-white);
+border-radius: 10px;
+width: 40%;
+display: flex;
+flex-direction: column;
+align-items: center;
+
+ & img {
+    width: 200px;
     height: auto;
-    border-radius: 0.5rem;
-    border: 1px solid var(--withe-color3);
-    box-shadow: 0 1px 4px rgba(44,44,44,0.07);
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
 }
 
-.transferencia-acoes {
-    display: flex;
-    gap: 1.2rem;
-    margin-top: 1rem;
+.registro-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 90%;
+  max-height: 300px;
+  overflow-y: auto;
+  background: linear-gradient(135deg, #7dda82 0%, #b2dfdb 100%);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(150, 214, 207, 0.205);
 }
 
-.btn-approve, .btn-reject {
-    padding: 0.6rem 1.4rem;
-    border: none;
-    border-radius: 0.4rem;
-    font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s;
+.registro-lista li {
+  padding: 10px 16px;
+  margin-bottom: 8px;
+  background: #f5f5f5;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 15px;
 }
 
-.btn-approve {
-    background: var(--green1);
-    color: var(--withe-color1);
+.registro-lista li:hover,
+.registro-lista li.selected {
+  background: #1ada54;
+  color: #2d5e57;
 }
 
-.btn-approve:hover {
-    background: var(--green2);
+.info-detalhes {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  font-size: 15px;
 }
 
-.btn-reject {
-    background: #e57373;
-    color: var(--withe-color1);
-}
-
-.btn-reject:hover {
-    background: #c62828;
-}
-
-/* Gráfico de pedidos */
-.transferencia-grafico {
-    background: #ededed;
-    border-radius: 1rem;
-    box-shadow: 0 2px 8px rgba(44, 44, 44, 0.08);
-    padding: 2rem 2.5rem;
-    max-width: 600px;
-    margin: 0 auto 2.5rem auto;
-    text-align: center;
-}
-
-.transferencia-grafico h3 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.4rem;
-    color: var(--brown2);
-    margin-bottom: 1.2rem;
-}
-
-.pedidos-lista {
-    max-height: 180px;
-    overflow-y: auto;
-    background: #f5f5f5;
-    border-radius: 0.7rem;
-    padding: 1rem 0.5rem;
-    margin: 1rem 0 0 0;
-    list-style: disc inside;
-    text-align: left;
-}
-
-.pedidos-lista li {
-    padding: 0.7rem 1rem;
-    margin-bottom: 0.3rem;
-    border-radius: 0.4rem;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: background 0.2s;
-    font-size: 1.1rem;
-    background: #e0e0e0;
-}
-
-.pedidos-lista li:hover,
-.pedidos-lista li.selected {
-    background: #d0f5e2;
-}
-
-.pedido-id {
-    color: var(--green1);
-    font-weight: bold;
-    margin-left: 1.2rem;
+.info-detalhes p {
+  margin: 8px 0;
+  font-size: 15px;
 }
