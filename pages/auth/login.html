@@ -1,54 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZeluS</title>
-    <link rel="stylesheet" href="src/css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+  <title>ZeluS</title>
 
-  <body>
-    <div class="principal">
-      <form>
-        <div class="retangulo-painel">
-          <img src="src/img/Img/Logo Zelus.png" class="logoZelus" />
-          <h1 class="frase-login">Entre e faça diferença.</h1>
+  <link rel="stylesheet" href="src/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+    rel="stylesheet" />
+</head>
 
-          <div class="container-login">
-            <div class="bloco-usuario">
-              <label for="usuario" class="texto-campo">Usuário</label>
-              <input class="campo" type="text" id="usuario" name="usuario" placeholder="Digite seu nome de usuário" />
-            </div>
+<body>
+  <div class="principal">
+    <form>
+      <div class="retangulo-painel">
+        <img src="src/img/Img/Logo Zelus.png" class="logoZelus" />
+        <h1 class="frase-login">Entre e faça diferença.</h1>
 
-            <div class="bloco-senha">
-              <label for="senha" class="texto-campo">Senha</label>
-              <input class="campo" type="password" id="senha" name="senha" placeholder="Digite sua senha" />
-            </div>
-            <div class="final-login">
-              <button class="botao-entre" type="submit">Entre</button>
-              <h2 class="esq-senha"><a href="" class="rec-senha">Esqueceu a senha?</a></h2>
-              <h2 class="registro">Ainda não tem uma conta? <a href="../cadastro/cadastro.html" class="link-cadastro">Registre-se!</a></h2>
-            </div>
+        <div class="container-login">
+          <div class="bloco-usuario">
+            <label for="usuario" class="texto-campo">Usuário</label>
+            <input class="campo" type="text" id="usuario" name="usuario" placeholder="Digite seu nome de usuário" />
+          </div>
+
+          <div class="bloco-senha">
+            <label for="senha" class="texto-campo">Senha</label>
+            <input class="campo" type="password" id="senha" name="senha" placeholder="Digite sua senha" />
+          </div>
+
+          <div class="final-login">
+            <button class="botao-entre" type="submit">Entre</button>
+            <h2 class="esq-senha">
+              <a href="" class="rec-senha">Esqueceu a senha?</a>
+            </h2>
+            <h2 class="registro">
+              Ainda não tem uma conta?
+              <a href="" class="link-cadastro">Registre-se!</a>
+            </h2>
           </div>
         </div>
-      </form>
-      <div class="container-img">
-        <img src="src/img/Img/floresta.png" alt="floresta" />
-        <div class="icone-container"></div>
       </div>
+    </form>
+
+    <div class="container-img">
+      <img src="src/img/Img/floresta.png" alt="floresta" />
+      <div class="icone-container"></div>
     </div>
-    <script src="/pages/auth/src/js/login.js"></script>
-  </body>
+  </div>
+</body>
+
 </html>
