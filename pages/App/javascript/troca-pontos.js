@@ -11,6 +11,10 @@
   const modalCancel = document.getElementById("modal-cancel");
   const modalExchange = document.getElementById("modal-exchange");
 
+  const usuario = JSON.parse(localStorage.getItem("usuarioLogado"));
+  pointsValue.textContent = usuario.pontos
+
+
   // Dados
   const historyItems = [
     {

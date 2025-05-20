@@ -53,7 +53,7 @@ body {
 }
 
 .logo h1 {
-    font-size: var(--font-size-logo);
+    font-size: 24px;
     color: var(--color-primary);
     margin: 0;
     font-weight: 600;
@@ -220,7 +220,7 @@ body {
     margin-top: 0;
 }
 
-.icone-titulos {
+.traço-titulo {
     width: 15px;
     height: 25px;
     object-fit: contain;
@@ -727,10 +727,6 @@ body {
     margin-top: 0;
     padding-top: 1.5rem;
     border-top: 1px solid #eee;
-}
-
-.historico {
-    margin-top: 1.5rem;
 }
 
 .upload {

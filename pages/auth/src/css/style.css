@@ -52,7 +52,6 @@ body {
   width: 30vw;
   min-height: 100vh;
   background-color: #463300;
-  background-image: url(../img/Img/floresta.png);
   color: white;
   display: flex;
   flex-direction: column;
@@ -230,7 +229,6 @@ body {
 }
 
 .icone-container {
-  background-image: url('../img/Img/circulo-frase.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

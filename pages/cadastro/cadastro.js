@@ -50,8 +50,8 @@ function finalizarCadastro() {
         return res.json();
       })
       .then((data) => {
-        alert("Cadastro realizado com sucesso!");
         window.location.href = "../auth/login.html";
+        alert("Cadastro realizado com sucesso!");
       })
       .catch((err) => alert(err.message));
   }
