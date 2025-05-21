@@ -76,7 +76,6 @@ if (registroForm) {
                 
                 usuario.pontos += pontos_gerados;
                 const usuario_pontos = usuario.pontos;
-                alert(usuario_senha, usuario_pontos)
 
                 await fetch("http://localhost:3000/api/usuarios/pontos", {
                     method: "POST",
