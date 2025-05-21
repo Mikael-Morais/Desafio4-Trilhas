@@ -13,7 +13,9 @@ if (registroForm) {
         const peso = parseFloat(pesoInput.value.replace(',', '.'));
         const origem = origemSelect.value;
 
-        const usuario_id = usuario.id
+        const usuario_id = usuario.id;
+        const usuario_senha = usuario.senha;
+
         if (!usuario_id) {
             alert('usuário não autenticado');
             return;
@@ -71,6 +73,25 @@ if (registroForm) {
 
             if (response.ok) {
                 alert('Reciclagem registrada com sucesso!');
+                
+                usuario.pontos += pontos_gerados;
+                const usuario_pontos = usuario.pontos;
+                alert(usuario_senha, usuario_pontos)
+
+                await fetch("http://localhost:3000/api/usuarios/pontos", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({usuario_id, usuario_senha, usuario_pontos}),
+                })
+                    .then((res) => {
+                        if (!res.ok) throw new Error("Erro ao confirmar usuário");
+                        return res.json();
+                    })
+                    .then((data) => {
+                        localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
+                    })
+                    .catch((err) => alert(err.message));
+
                 registroForm.reset();
             } else {
                 alert('Erro: '+resultado.mensagem)
