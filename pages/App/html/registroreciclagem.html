@@ -66,8 +66,8 @@
                                 <div class="grupo-img">
                                     <label>Inserir Imagem</label>
                                     <div class="upload">
-                                        <input type="file" id="imagem" accept="image/*" style="display: none;">
-                                        <label for="imagem" class="upload-label">
+                                        <input type="file" id="imagem" accept="image/*" style="display: none;" onchange="mostrarPreviewImagem(this)">
+                                        <label for="imagem" class="upload-label" id="upload-label">
                                             <i class="fas fa-camera"></i>
                                             <span>Clique para adicionar uma foto</span>
                                         </label>
