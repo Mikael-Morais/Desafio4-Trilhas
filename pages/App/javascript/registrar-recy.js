@@ -89,18 +89,12 @@ function mostrarPreviewImagem(input) {
   if (file && file.type.startsWith("image/")) {
     const img = document.createElement("img");
     img.src = URL.createObjectURL(file);
-    img.style.maxWidth = "100%";
-    img.style.maxHeight = "120px";
-    img.style.cursor = "pointer";
-    img.onclick = function () {
-      input.click();
-    };
+    img.className = "preview-img";
+    img.onclick = () => input.click();
     preview.appendChild(img);
     preview.style.display = "block";
     if (uploadLabel) uploadLabel.style.display = "none";
-    img.onload = function () {
-      URL.revokeObjectURL(img.src);
-    };
+    img.onload = () => URL.revokeObjectURL(img.src);
   } else {
     preview.style.display = "none";
     if (uploadLabel) uploadLabel.style.display = "flex";
