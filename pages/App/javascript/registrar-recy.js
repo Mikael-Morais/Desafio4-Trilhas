@@ -119,3 +119,23 @@ function mostrarPreviewImagem(input) {
     if (uploadLabel) uploadLabel.style.display = "flex";
   }
 }
+
+function mostrarPreviewImagem(input) {
+  const preview = document.getElementById("img-preview");
+  const uploadLabel = document.getElementById("upload-label");
+  preview.innerHTML = "";
+  const file = input.files[0];
+  if (file && file.type.startsWith("image/")) {
+    const img = document.createElement("img");
+    img.src = URL.createObjectURL(file);
+    img.className = "preview-img";
+    img.onclick = () => input.click();
+    preview.appendChild(img);
+    preview.style.display = "block";
+    if (uploadLabel) uploadLabel.style.display = "none";
+    img.onload = () => URL.revokeObjectURL(img.src);
+  } else {
+    preview.style.display = "none";
+    if (uploadLabel) uploadLabel.style.display = "flex";
+  }
+}
