@@ -33,4 +33,27 @@ router.post('/adicionar', async (req, res) => {
   }
 })
 
+
+
+// registrando reciclagem de um usuário
+// http://localhost:3000/api/reciclagens?usuario_id=?
+router.get("/", async (req, res) => {
+    const { usuario_id } = req.query;
+
+    try {
+        const reciclagens = await db.query(`
+            SELECT r.*, rm.material_id, m.nome AS material_nome
+            FROM reciclagens r
+            LEFT JOIN reciclagem_materiais rm ON rm.reciclagem_id = r.id
+            LEFT JOIN materiais m ON m.id = rm.material_id
+            WHERE r.usuario_id='${usuario_id}';
+        `);
+
+        res.json(reciclagens);
+    } catch (error) {
+        res.status(500).json({ erro: "Erro ao buscar reciclagens" });
+    }
+});
+
+
 module.exports = router
