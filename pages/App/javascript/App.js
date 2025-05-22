@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-
   const menuItems = document.querySelectorAll(".menu li");
   const btnRegistrar = document.querySelector(".btn-registrar");
   const telas = ["home.html", "zmapa.html", "troca.html", "admin-registro.html", "registroreciclagem.html"];
@@ -30,6 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
           scriptPath = "/pages/App/javascript/registrar-recy.js";
         } else if (url.includes("troca.html")) {
           scriptPath = "/pages/App/javascript/troca-pontos.js";
+        } else if (url.includes("zmapa.html")) {
+          scriptPath = "/pages/App/javascript/zmapa.js";
         }
 
         if (scriptPath) {
@@ -39,6 +40,9 @@ document.addEventListener("DOMContentLoaded", function () {
           newScript.onload = () => {
             if (scriptPath.includes("home.js") && typeof initCharts === "function") {
               initCharts();
+            }
+            if (scriptPath.includes("zmapa.js") && typeof initZmapa === "function") {
+              initZmapa();
             }
           };
           document.body.appendChild(newScript);
@@ -50,8 +54,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
   }
-
-
 
   // menu lateral que trocas as paginas
   menuItems.forEach((item, idx) => {
