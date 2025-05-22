@@ -87,3 +87,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
+const logoutBtn = document.querySelector(".logout-btn");
+if (logoutBtn) {
+  logoutBtn.addEventListener("click", function () {
+    localStorage.removeItem("logado");
+    localStorage.removeItem("usuarioLogado");
+    window.location.href = "../../auth/login.html";
+  });
+}
