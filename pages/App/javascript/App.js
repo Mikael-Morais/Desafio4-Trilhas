@@ -24,15 +24,15 @@ document.addEventListener("DOMContentLoaded", function () {
         let scriptPath = "";
 
         if (url.includes("home.html")) {
-          scriptPath = "/pages/App/javascript/home.js";
+          scriptPath = "../javascript/home.js";
         } else if (url.includes("registroreciclagem.html")) {
-          scriptPath = "/pages/App/javascript/registrar-recy.js";
+          scriptPath = "../javascript/registrar-recy.js";
         } else if (url.includes("troca.html")) {
-          scriptPath = "/pages/App/javascript/troca-pontos.js";
+          scriptPath = "../javascript/troca-pontos.js";
         } else if (url.includes("zmapa.html")) {
-          scriptPath = "/pages/App/javascript/zmapa.js";
+          scriptPath = "../javascript/zmapa.js";
         } else if (url.includes("admin-registro.html")) {
-          scriptPath = "/pages/App/javascript/admin.js";
+          scriptPath = "../javascript/admin.js";
         }
 
         if (scriptPath) {
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
       menuItems.forEach((li) => li.classList.remove("active"));
       this.classList.add("active");
       if (telas[idx]) {
-        loadPage(`/pages/App/html/${telas[idx]}`);
+        loadPage(`../html/${telas[idx]}`);
       }
     });
   });
@@ -71,12 +71,12 @@ document.addEventListener("DOMContentLoaded", function () {
     btnRegistrar.addEventListener("click", function () {
       // tira a seleção do menu
       menuItems.forEach((li) => li.classList.remove("active"));
-      loadPage("/pages/App/html/registroreciclagem.html");
+      loadPage("../html/registroreciclagem.html");
     });
   }
 
   // carrega a primeira tela que é a home
-  loadPage(`/pages/App/html/${telas[0]}`);
+  loadPage(`../html/${telas[0]}`);
 
   // coloca o nome do usuario logado na tela
   const nomeUsuario = JSON.parse(localStorage.getItem("usuarioLogado"));
