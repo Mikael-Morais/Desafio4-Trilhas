@@ -101,6 +101,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   margin-top: 16px;
+  padding: 8px 6px;
 }
 
 .container-tabela {

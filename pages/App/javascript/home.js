@@ -1,10 +1,14 @@
 // Primeira função lá pro coluna
 function montarGraficoColunas(reciclagens) {
+  const reciclagensIDS = [];
   const reciclagensPorMes = {};
   reciclagens.forEach(r => {
-    const data = new Date(r.data_reciclagem);
-    const mesAno = `${data.getMonth() + 1}/${data.getFullYear()}`;
-    reciclagensPorMes[mesAno] = (reciclagensPorMes[mesAno] || 0) + 1;
+    if (!reciclagensIDS.includes(r.id)) {
+      reciclagensIDS.push(r.id)
+      const data = new Date(r.data_reciclagem);
+      const mesAno = `${data.getMonth() + 1}/${data.getFullYear()}`;
+      reciclagensPorMes[mesAno] = (reciclagensPorMes[mesAno] || 0) + 1;
+    }
   });
 
   const labels = Object.keys(reciclagensPorMes);
@@ -17,14 +21,44 @@ function montarGraficoColunas(reciclagens) {
       datasets: [{
         label: 'Reciclagens por mês',
         data: dados,
-        backgroundColor: '#48007d'
+        backgroundColor: '#59a098'
       }]
     }
   });
 }
 
 function montarGraficoPizza(reciclagens) {
+  // Contar a quantidade de cada material
+  const materiaisContagem = {};
+
+  reciclagens.forEach(r => {
+    if (r.material_nome) {
+      materiaisContagem[r.material_nome] = (materiaisContagem[r.material_nome] || 0) + 1;
+    }
+  });
+
+  // Calcular o total de registros
+  const total = Object.values(materiaisContagem).reduce((acc, val) => acc + val, 0);
+
+  // Calcular porcentagem para cada material
+  const labelsPizza = Object.keys(materiaisContagem);
+  const dadosPizza = labelsPizza.map(material => {
+    const contagem = materiaisContagem[material];
+    return ((contagem / total) * 100).toFixed(2); // porcentagem com 2 casas
+  });
+
+  new Chart(document.querySelector(".grafico-pizza"), {
+    type: 'pie',
+    data: {
+      labels: labelsPizza.map((label, i) => `${label} (${dadosPizza[i]}%)`),
+      datasets: [{
+        data: dadosPizza,
+        backgroundColor: ['#9AEF30', '#0B6549', '#AD6CF1', '#8AB8ED', '#0B4DD1', '#325638']
+      }]
+    }
+  });
 }
+
 
 function preencherTabela(reciclagens) {
 }
@@ -36,6 +70,8 @@ window.initCharts = async function () {
 
   const response = await fetch(`http://localhost:3000/api/reciclagens?usuario_id=${usuario_id}`);
   const reciclagens = await response.json();
+  
+  console.log(reciclagens)
 
   montarGraficoColunas(reciclagens);
   montarGraficoPizza(reciclagens);

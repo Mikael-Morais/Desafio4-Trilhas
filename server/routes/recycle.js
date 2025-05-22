@@ -49,11 +49,10 @@ router.get("/", async (req, res) => {
             WHERE r.usuario_id='${usuario_id}';
         `);
 
-        res.json(reciclagens);
+        res.json(reciclagens.rows);
     } catch (error) {
         res.status(500).json({ erro: "Erro ao buscar reciclagens" });
     }
 });
-
 
 module.exports = router
