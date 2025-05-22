@@ -8,7 +8,7 @@ async function salvaPontos(usuario_pontos) {
   usuario.pontos = usuario_pontos;
 
   try {
-    await fetch("http://localhost:3000/api/usuarios/pontos", {
+    await fetch("https://deploy-desafio4-trilhas.onrender.com/api/usuarios/pontos", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -32,7 +32,7 @@ window.initAdmin = async function () {
   const origem = document.getElementById("info-origem");
 
   try {
-    const response = await fetch("http://localhost:3000/api/admin/admregistro");
+    const response = await fetch("https://deploy-desafio4-trilhas.onrender.com/api/admin/admregistro");
     const reciclagens = await response.json();
 
     reciclagens.forEach(rec => {
@@ -82,7 +82,7 @@ window.initAdmin = async function () {
     }
 
     try {
-      await fetch("http://localhost:3000/api/admin/verificar", {
+      await fetch("https://deploy-desafio4-trilhas.onrender.com/api/admin/verificar", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

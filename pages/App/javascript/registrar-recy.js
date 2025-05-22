@@ -59,7 +59,7 @@ if (registroForm) {
     };
 
     try {
-      const response = await fetch("http://localhost:3000/api/reciclagens/adicionar", {
+      const response = await fetch("https://deploy-desafio4-trilhas.onrender.com/api/reciclagens/adicionar", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -103,7 +103,7 @@ window.initCharts = async function () {
   const usuario = JSON.parse(localStorage.getItem("usuarioLogado"));
   const usuario_id = usuario.id;
 
-  const response = await fetch(`http://localhost:3000/api/reciclagens?usuario_id=${usuario_id}`);
+  const response = await fetch(`https://deploy-desafio4-trilhas.onrender.com/api/reciclagens?usuario_id=${usuario_id}`);
   const reciclagens = await response.json();
 
   montarGraficoColunas(reciclagens);
