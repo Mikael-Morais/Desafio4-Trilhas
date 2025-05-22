@@ -48,7 +48,7 @@ if (registroForm) {
       return;
     }
 
-    const pontos_gerados = Math.round(peso * 10);
+    const pontos_gerados = Math.round(peso * 20);
 
     const dados = {
       usuario_id: parseInt(usuario_id),

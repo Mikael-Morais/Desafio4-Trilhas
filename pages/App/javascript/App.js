@@ -86,12 +86,12 @@ document.addEventListener("DOMContentLoaded", function () {
       spanNome.textContent = nomeUsuario.nome;
     }
   }
+  const logoutBtn = document.querySelector(".logout-btn");
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", function () {
+      localStorage.removeItem("logado");
+      localStorage.removeItem("usuarioLogado");
+      window.location.href = "../../auth/login.html";
+    });
+  }
 });
-const logoutBtn = document.querySelector(".logout-btn");
-if (logoutBtn) {
-  logoutBtn.addEventListener("click", function () {
-    localStorage.removeItem("logado");
-    localStorage.removeItem("usuarioLogado");
-    window.location.href = "../../auth/login.html";
-  });
-}

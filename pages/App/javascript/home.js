@@ -61,7 +61,42 @@ function montarGraficoPizza(reciclagens) {
 
 
 function preencherTabela(reciclagens) {
+  const tbody = document.querySelector("#tabelaReciclagens tbody");
+  tbody.innerHTML = ""; // Limpar conteúdo anterior
+
+  // Agrupar por ID de reciclagem
+  const reciclagensAgrupadas = {};
+
+  reciclagens.forEach(r => {
+    const id = r.id;
+
+    if (!reciclagensAgrupadas[id]) {
+      reciclagensAgrupadas[id] = {
+        data: new Date(r.data_reciclagem).toLocaleDateString(),
+        origem: r.origem,
+        peso: r.peso,
+        pontos: r.pontos_gerados,
+        materiais: [r.material_nome]
+      };
+    } else {
+      reciclagensAgrupadas[id].materiais.push(r.material_nome);
+    }
+  });
+
+  // Montar a tabela com uma linha por reciclagem
+  Object.values(reciclagensAgrupadas).forEach(rec => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${rec.data}</td>
+      <td>${rec.origem}</td>
+      <td>${rec.peso}</td>
+      <td>${rec.pontos}</td>
+      <td>${rec.materiais.join(", ")}</td>
+    `;
+    tbody.appendChild(row);
+  });
 }
+
 
 
 window.initCharts = async function () {
