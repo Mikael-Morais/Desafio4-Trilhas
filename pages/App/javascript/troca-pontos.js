@@ -14,8 +14,7 @@
   const usuario = JSON.parse(localStorage.getItem("usuarioLogado"));
   pointsValue.textContent = usuario.pontos
 
-
-  // Dados
+ /*  // Dados
   const historyItems = [
     {
       id: 1,
@@ -34,6 +33,30 @@
       category: "transport",
     },
   ];
+   */
+
+  let historyItems = JSON.parse(localStorage.getItem("historyItems")) || [
+  {
+    id: 1,
+    name: "Conta de Energia (15%)",
+    date: "20/05/2023",
+    points: 750,
+    icon: "bolt",
+    category: "energy",
+  },
+  {
+    id: 2,
+    name: "Transporte Público",
+    date: "18/05/2023",
+    points: 500,
+    icon: "bus",
+    category: "transport",
+  },
+];
+
+function saveHistory() {
+  localStorage.setItem("historyItems", JSON.stringify(historyItems));
+}
 
   let currentItem = null;
 
@@ -73,9 +96,21 @@
             .join("");
   }
 
-  function updatePoints(change) {
+ /*  function updatePoints(change) {
     pointsValue.textContent = parseInt(pointsValue.textContent) + change;
-  }
+  } */
+
+function updatePoints(change) {
+  // Calcula os novos pontos
+  const newPoints = parseInt(pointsValue.textContent) + change;
+
+  // Atualiza no DOM
+  pointsValue.textContent = newPoints;
+
+  // Atualiza no objeto local e salva no localStorage
+  usuario.pontos = newPoints;
+  localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
+}
 
   function openDetailsModal(item) {
     currentItem = item;
@@ -127,6 +162,7 @@
     if (confirm("Limpar todo o histórico?")) {
       historyItems.length = 0;
       renderHistory();
+      saveHistory();
     }
   });
 
@@ -146,7 +182,7 @@
     const itemPrice = parseInt(currentItem.querySelector(".item-price").textContent);
     const currentPoints = parseInt(pointsValue.textContent);
 
-    if (currentPoints >= itemPrice) {
+   /*  if (currentPoints >= itemPrice) {
       historyItems.unshift({
         id: Date.now(),
         name: currentItem.querySelector(".item-name").textContent,
@@ -166,9 +202,31 @@
       closeModal();
     } else {
       alert("Pontos insuficientes");
+    } */
+
+    if (currentPoints >= itemPrice){
+            historyItems.unshift({
+        id: Date.now(),
+        name: currentItem.querySelector(".item-name").textContent,
+        date: new Date().toLocaleDateString("pt-BR"),
+        points: itemPrice,
+        icon: currentItem.dataset.categories.includes("energy")
+          ? "bolt"
+          : currentItem.dataset.categories.includes("transport")
+          ? "bus"
+          : currentItem.dataset.categories.includes("food")
+          ? "utensils"
+          : "gift",
+        category: currentItem.dataset.categories.split(" ")[0],
+      });
+      saveHistory();
+      updatePoints(-itemPrice);
+      renderHistory();
+      closeModal();
     }
   });
 
   // Inicialização
   renderHistory();
+  
 })();
