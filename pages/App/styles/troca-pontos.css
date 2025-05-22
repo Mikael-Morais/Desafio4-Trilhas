@@ -83,9 +83,10 @@
     line-height: 1.4;
 }
 
+/* Estilos para a exibição de pontos */
 .points-exchange__points-display {
-    background-color: var(--color-primary);
-    color: var(--color-white);
+    background-color: #C4F1C8;
+    color: var(--color-text);
     padding: var(--spacing-lg) var(--spacing-md);
     width: 280px;
     display: flex;
@@ -95,28 +96,59 @@
     align-items: center;
     border-radius: var(--border-radius);
     height: auto;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border: 2px solid transparent;
+}
+
+.points-exchange__points-display:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-color: var(--color-primary);
+    background-color: #B0E8B5;
 }
 
 .points-label {
-  font-size: 0.8rem;
-  opacity: 0.9;
-  margin-bottom: 0px;
+    font-size: 0.8rem;
+    opacity: 0.9;
+    margin-bottom: 0px;
+    color: var(--color-text);
+    font-weight: 500;
 }
 
 .points-container {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.points-exchange__points-display:hover .points-container {
+    transform: scale(1.05);
 }
 
 .leaf-icon {
-  font-size: 2rem;
+    font-size: 2rem;
+    color: var(--color-primary);
+    transition: all 0.3s ease;
+}
+
+.points-exchange__points-display:hover .leaf-icon {
+    transform: rotate(15deg);
+    color: #2E7D32;
 }
 
 .points-value {
-  font-size: 2.5rem;
-  margin-top: 0px;
-  font-weight: bold;
+    font-size: 2.5rem;
+    margin-top: 0px;
+    font-weight: bold;
+    color: var(--color-text);
+    transition: all 0.3s ease;
+}
+
+.points-exchange__points-display:hover .points-value {
+    color: var(--color-primary);
+    text-shadow: 0 0 5px rgba(46, 125, 50, 0.2);
 }
 
 /* Conteúdo Principal */
@@ -256,8 +288,14 @@
 }
 
 /* Estilos para a barra de pesquisa */
+/* Estilos para a barra de pesquisa */
 .search-bar {
     position: relative;
+    transition: all 0.3s ease;
+}
+
+.search-bar:hover {
+    transform: translateY(-2px);
 }
 
 #item-search {
@@ -269,6 +307,7 @@
     color: var(--color-text);
     background-color: #f8f8f8;
     transition: all 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
 #item-search:focus {
@@ -278,8 +317,19 @@
     box-shadow: 0 0 0 2px rgba(89, 160, 152, 0.2);
 }
 
+#item-search:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 2px 8px rgba(89, 160, 152, 0.15);
+    background-color: var(--color-white);
+}
+
 #item-search::placeholder {
     color: #aaa;
+    transition: all 0.3s ease;
+}
+
+.search-bar:hover #item-search::placeholder {
+    color: var(--color-primary-light);
 }
 
 .search-bar::before {
@@ -287,11 +337,17 @@
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
     position: absolute;
-    left: 30px;
+    left: 25px;
     top: 50%;
     transform: translateY(-50%);
-    color: var(--color-primary);
+    color: var(--color-primary-light);
     font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.search-bar:hover::before {
+    color: var(--color-primary);
+    transform: translateY(-50%) scale(1.1);
 }
 
 /* Estilos para o histórico de trocas */
