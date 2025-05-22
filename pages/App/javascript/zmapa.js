@@ -27,3 +27,18 @@ window.initZmapa = function () {
     }
   };
 };
+
+const inputPesquisa = document.getElementById("pesquisa-ecoponto");
+if (inputPesquisa) {
+  inputPesquisa.addEventListener("input", function () {
+    const termo = inputPesquisa.value.trim().toLowerCase();
+    document.querySelectorAll(".card-eco").forEach((card) => {
+      const nome = card.querySelector(".card-title").textContent.toLowerCase();
+      if (nome.includes(termo)) {
+        card.style.display = "";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+}
