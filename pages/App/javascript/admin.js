@@ -17,6 +17,7 @@ async function salvaPontos(usuario_pontos) {
     });
   } catch (error) {
   }
+  window.location.reload()
   localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
   alert(`Pontos atualizados: ${usuario_pontos} pontos`);
 }
