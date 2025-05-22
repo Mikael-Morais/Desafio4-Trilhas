@@ -4,7 +4,7 @@ const db = require('../postgresqlConfig');
 
 
 // cadastro de usuário
-// http://localhost:3000/api/usuarios/cadastro
+// https://deploy-desafio4-trilhas.onrender.com/api/usuarios/cadastro
 router.post("/cadastro", async (req, res) => {
   const { nome, usuario, senha } = req.body;
   try {
@@ -22,7 +22,7 @@ router.post("/cadastro", async (req, res) => {
 });
 
 // login de usuario
-// http://localhost:3000/api/usuarios/login
+// https://deploy-desafio4-trilhas.onrender.com/api/usuarios/login
 router.post("/login", async (req, res) => {
   const { usuario, senha } = req.body;
   try {
@@ -41,7 +41,7 @@ router.post("/login", async (req, res) => {
 });
 
 // listando usuários - caminho completo:
-// http://localhost:3000/api/usuarios/
+// https://deploy-desafio4-trilhas.onrender.com/api/usuarios/
 router.get("/", async (req, res) => {
   try {
     const result = await db.query("SELECT usuario FROM usuarios");
@@ -53,7 +53,7 @@ router.get("/", async (req, res) => {
 
 
 // salvando pontos - caminho completo:
-// http://localhost:3000/api/usuarios/pontos
+// https://deploy-desafio4-trilhas.onrender.com/api/usuarios/pontos
 router.post("/pontos", async (req, res) => {
   const { usuario_id, usuario_senha, usuario_pontos } = req.body;
 

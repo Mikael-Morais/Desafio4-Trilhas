@@ -15,4 +15,4 @@ app.use('/api/usuarios', usuariosRoutes);
 app.use('/api/reciclagens', reciclagemRoutes);
 app.use('/api/admin', admRoutes);
 
-app.listen(3000, () => console.log("API rodando em http://localhost:3000"));
+app.listen(3000, () => console.log("API rodando em https://deploy-desafio4-trilhas.onrender.com"));

@@ -5,7 +5,7 @@ const { route } = require('./users');
 
 
 // registrando reciclagem de um usuário
-// http://localhost:3000/api/reciclagens/adicionar
+// https://deploy-desafio4-trilhas.onrender.com/api/reciclagens/adicionar
 router.post('/adicionar', async (req, res) => {
     const {usuario_id, origem, peso, pontos_gerados, materiais } = req.body;
 
@@ -37,7 +37,7 @@ router.post('/adicionar', async (req, res) => {
 
 
 // registrando reciclagem de um usuário
-// http://localhost:3000/api/reciclagens?usuario_id=?
+// https://deploy-desafio4-trilhas.onrender.com/api/reciclagens?usuario_id=?
 router.get("/", async (req, res) => {
     const { usuario_id } = req.query;
 

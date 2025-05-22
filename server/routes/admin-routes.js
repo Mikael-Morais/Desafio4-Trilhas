@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require('../postgresqlConfig');
 
 // listando reciclagens na pagina de adm
-// http://localhost:3000/api/admin/admregistro
+// https://deploy-desafio4-trilhas.onrender.com/api/admin/admregistro
 router.get("/admregistro", async (req, res) => {
     try {
         const result = await db.query(`
@@ -35,7 +35,7 @@ router.get("/admregistro", async (req, res) => {
 
 
 // listando reciclagens na pagina de adm
-// http://localhost:3000/api/admin/verificar
+// https://deploy-desafio4-trilhas.onrender.com/api/admin/verificar
 router.post("/verificar", async (req, res) => {
   const { id } = req.body;
 
