@@ -40,7 +40,7 @@ function finalizarCadastro() {
       return;
     }
 
-    fetch("http://localhost:3000/api/usuarios/cadastro", {
+    fetch("https://deploy-desafio4-trilhas.onrender.com/api/usuarios/cadastro", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ nome, usuario, senha }),
@@ -50,8 +50,8 @@ function finalizarCadastro() {
         return res.json();
       })
       .then((data) => {
-        alert("Cadastro realizado com sucesso!");
         window.location.href = "../auth/login.html";
+        alert("Cadastro realizado com sucesso!");
       })
       .catch((err) => alert(err.message));
   }

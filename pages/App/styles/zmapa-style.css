@@ -87,3 +87,114 @@
 .details-btn:hover {
   background-color: #3e706a;
 }
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(30, 41, 59, 0.75); /* cor mais escura e elegante */
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.modal-overlay.active {
+  display: flex;
+}
+.modal-container {
+  background: #f9fafb;
+  border-radius: 18px;
+  padding: 32px 24px 24px 24px;
+  max-width: 900px;
+  width: 95vw;
+  max-height: 92vh;
+  box-shadow: 0 8px 32px rgba(30, 41, 59, 0.25);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: slideUp 0.3s;
+}
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.modal-close {
+  background: var(--color-bg);
+  border: none;
+  font-size: 2rem;
+  color: var(--color-settings);
+  cursor: pointer;
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  transition: background 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-close:hover {
+  background: var(--color-settings);
+  color: #fff;
+}
+#modal-mapa-iframe {
+  width: 800px;
+  height: 400px;
+  max-width: 90vw;
+  max-height: 50vh;
+  border: none;
+  margin-bottom: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(30, 41, 59, 0.1);
+  background: var(--color-bg);
+}
+.modal-details {
+  width: 100%;
+  text-align: left;
+  padding: 0 8px;
+}
+#modal-mapa-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+#modal-mapa-endereco {
+  font-size: 1.1rem;
+  color: var(--color-settings);
+  margin-bottom: 4px;
+}
+@media (max-width: 600px) {
+  .modal-container {
+    padding: 12px 4px;
+    max-width: 99vw;
+  }
+  #modal-mapa-iframe {
+    width: 98vw;
+    height: 220px;
+    min-height: 120px;
+  }
+  #modal-mapa-title {
+    font-size: 1.1rem;
+  }
+}

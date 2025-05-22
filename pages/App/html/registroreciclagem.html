@@ -1,155 +1,101 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Reciclagem</title>
-    <link rel="stylesheet" href="../styles/registro-rec.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
-</head>
-
-<body>
-    <div class="container">
-        <aside class="sidebar">
-            <div class="logo">
-                <img class="icone-logo" src="/pages/App/assets/logoZelus.png" alt="ZeluS Logo" />
-                <h1>ZeluS</h1>
+<link rel="stylesheet" href="../styles/registro-rec.css">
+        <div class="container-painel">
+            <div class="reg-rec">
+                <div class="titulo-registro">
+                    <h4 class="h4-registro"><i class="fa fa-recycle"></i> - Registro de Reciclagens</h4>
+                </div>
+                <p class="frase">Não deixe seu esforço se perder! Registre os resíduos reciclados e fortaleça a
+                    missão <span class="edit-zelus">ZeluS </span> de transformar sustentabilidade em ação.
             </div>
 
-            <nav class="menu">
-                <ul>
-                    <li><i class="fa fa-home"></i> Home</li>
-                    <li><i class="fa fa-map"></i> Z-Mapa</li>
-                    <li><i class="fa fa-exchange-alt"></i> Troca de Pontos</li>
-                    <li><i class="fa fa-book"></i> EcoCursos</li>
-                    <li><i class="fa-solid fa-square-check"></i> Confirmar Registro</li>
-                    <li><i class="fa fa-ban"></i> Denúncias</li>
-                </ul>
-            </nav>
+            <div class="linha-flex">
+                <div class="container-abaixo">
+                    <div class="detalhes-rec">
+                        <div class="titulo-detalhes">
+                            <h4><i class="fa-solid fa-circle-info"></i> Detalhes da Reciclagem</h4>
+                        </div>
+                        <form class="form-registro" id="form-registro">
+                            <div class="form-detalhes">
 
-            <button class="btn-registrar"><i class="fa fa-plus"></i> Registrar Reciclagem</button>
-
-            <div class="user">
-                <img src="/pages/App/assets/profile.png" alt="Foto do usuário" />
-                <div class="user-info">
-                    <span class="user-name">Paulo Rafael Costa Silva</span>
-                </div>
-            </div>
-
-            <div class="settings"><i class="fa fa-cog"></i> Configurações</div>
-        </aside>
-
-        <main class="content">
-            <div class="container-painel">
-                <div class="reg-rec">
-                    <div class="titulo-registro">
-                        <img class="icone-titulos" src="../assets/icone-titulos.png">
-                        <h4 class="h4-registro">Registro de Reciclagens</h4>
-                    </div>
-                    <p class="frase">Não deixe seu esforço se perder! Registre os resíduos reciclados e fortaleça a
-                        missão <span class="edit-zelus">ZeluS </span> de transformar sustentabilidade em ação.
-                </div>
-
-                <div class="linha-flex">
-                    <div class="container-abaixo">
-                        <div class="detalhes-rec">
-                            <div class="titulo-detalhes">
-                                <img class="icone-titulos" src="../assets/icone-titulos.png">
-                                <h4>Detalhes da Reciclagem</h4>
-                            </div>
-                            <form class="form-registro">
-                                <div class="form-detalhes">
-
-                                    <div class="grupo-data">
-                                        <label for="data">Data</label>
-                                        <input type="date" id="data" name="data">
-                                    </div>
-
-                                    <div class="grupo-materiais">
-                                        <label>Tipo de Material</label>
-                                        <div class="materiais-container">
-                                            <label class="papel"><input type="checkbox">
-                                                <span custom-check>Papel</span>
-                                            </label>
-                                            <label class="plastico"><input type="checkbox">
-                                                <span class="custom-check">Plástico</span>
-                                            </label>
-                                            <label class="vidro"><input type="checkbox">
-                                                <span custom-check>Vidro</span>
-                                            </label>
-                                            <label class="metal"><input type="checkbox">
-                                                <span custom-check>Metal</span>
-                                            </label>
-                                            <label class="organico"><input type="checkbox">
-                                                <span custom-check>Orgânico</span>
-                                            </label>
-                                            <label class="eletronico"><input type="checkbox">
-                                                <span custom-check>Eletrônico</span>
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="pesagem">
-                                        <label>Peso (kg)</label>
-                                        <input type="number" name="peso" step="0.1" placeholder="0,00">
-                                    </div>
-
-                                    <div class="grupo-origem">
-                                        <label>Origem dos Recicláveis</label>
-                                        <select name="origem">
-                                            <option value="" disabled selected>Selecione a origem</option>
-                                            <option value="residencial">Residencial</option>
-                                            <option value="escolar">Escolar</option>
-                                            <option value="industrial">Industrial</option>
-                                            <option value="comercial">Comercial</option>
-                                            <option value="eventos">Eventos</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="grupo-img">
-                                        <label>Inserir Imagem</label>
-                                        <div class="upload">
-                                            <input type="file" id="imagem" accept="image/*" style="display: none;">
-                                            <label for="imagem" class="upload-label">
-                                                <i class="fas fa-camera"></i>
-                                                <span>Clique para adicionar uma foto</span>
-                                            </label>
-                                            <div class="img-preview" id="img-preview"></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="container-btn-enviar">
-                                        <button type="submit" class="btn-enviar">
-                                            <i class="fas fa-save"></i> Enviar
-                                        </button>
-                                    </div>
-
-
+                                <div class="grupo-data">
+                                    <label for="data">Data</label>
+                                    <input type="date" id="data" name="data">
                                 </div>
-                            </form>
-                        </div>
-                    </div>
 
-                    <div class="historico">
-                        <div class="titulo-historico">
-                            <img class="icone-titulos" src="../assets/icone-titulos.png">
-                            <h4 class="h4-historico">Histórico</h4>
-                        </div>
-                        <p class="text-historico">Faça um registro e acompanhe sua evolução.</p>
-                        <img class="img-pessoas" src="../assets/pessoas-reciclando2.png" alt="pessoas-reciclando">
-                    </div>
+                                <div class="grupo-materiais">
+                                    <label>Tipo de Material</label>
+                                    <div class="materiais-container">
+                                        <label class="papel"><input type="checkbox">
+                                            <span custom-check>Papel</span>
+                                        </label>
+                                        <label class="plastico"><input type="checkbox">
+                                            <span class="custom-check">Plástico</span>
+                                        </label>
+                                        <label class="vidro"><input type="checkbox">
+                                            <span custom-check>Vidro</span>
+                                        </label>
+                                        <label class="metal"><input type="checkbox">
+                                            <span custom-check>Metal</span>
+                                        </label>
+                                        <label class="organico"><input type="checkbox">
+                                            <span custom-check>Orgânico</span>
+                                        </label>
+                                        <label class="eletronico"><input type="checkbox">
+                                            <span custom-check>Eletrônico</span>
+                                        </label>
+                                    </div>
+                                </div>
 
+                                <div class="pesagem">
+                                    <label>Peso (kg)</label>
+                                    <input type="number" name="peso" step="0.1" placeholder="0,00">
+                                </div>
+
+                                <div class="grupo-origem">
+                                    <label>Origem dos Recicláveis</label>
+                                    <select name="origem">
+                                        <option value="" disabled selected>Selecione a origem</option>
+                                        <option value="residencial">Residencial</option>
+                                        <option value="escolar">Escolar</option>
+                                        <option value="industrial">Industrial</option>
+                                        <option value="comercial">Comercial</option>
+                                        <option value="eventos">Eventos</option>
+                                    </select>
+                                </div>
+
+                                <div class="grupo-img">
+                                    <label>Inserir Imagem</label>
+                                    <div class="upload">
+                                        <input type="file" id="imagem" accept="image/*" style="display: none;" onchange="mostrarPreviewImagem(this)">
+                                        <label for="imagem" class="upload-label" id="upload-label">
+                                            <i class="fas fa-camera"></i>
+                                            <span>Clique para adicionar uma foto</span>
+                                        </label>
+                                        <div class="img-preview" id="img-preview"></div>
+                                    </div>
+                                </div>
+
+                                <div class="container-btn-enviar">
+                                    <button type="submit" class="btn-enviar">
+                                        <i class="fas fa-save"></i> Enviar
+                                    </button>
+                                </div>
+
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="historico">
+                    <div class="titulo-historico">
+                        <h4 class="h4-historico"><i class="fa fa-history"></i> Histórico</h4>
+                    </div>
+                    <p class="text-historico">Faça um registro e acompanhe sua evolução.</p>
+                    <img class="img-pessoas" src="../assets/pessoas-reciclando2.png" alt="pessoas-reciclando">
                 </div>
 
             </div>
-    </div>
 
-    </main>
-
-    </div>
-
-</body>
-
-</html>
+        </div>
+</div>

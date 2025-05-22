@@ -26,37 +26,48 @@ function animateNumbers() {
 
     const interval = setInterval(() => {
 
-        if (recyclingValue < 63) {
+        if (recyclingValue < 100) {
 
             recyclingValue++;
             recyclingStat.textContent = recyclingValue;
         }
 
 
-        if (pollutionValue > 37) {
+        if (pollutionValue > 0) {
             pollutionValue--;
             pollutionStat.textContent = pollutionValue;
         }
 
 
-        if (recyclingValue === 63 && pollutionValue === 37) {
+        if (recyclingValue === 100 && pollutionValue === 0) {
 
             clearInterval(interval);
         }
     }, 80); // Ajuste o tempo para controlar a velocidade da animação
 }
 
-// // Ativa a animação quando a seção #recycle estiver visível
-// document.addEventListener('scroll', () => {
-//     const recycleSection = document.querySelector('#recycle');
-//     const sectionPosition = recycleSection.getBoundingClientRect().top;
-//     const screenPosition = window.innerHeight / 1.3;
+// Ativa a animação quando a seção #strip-informations re estiver visível
+function isSectionVisible(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (!section) return false;
+    const rect = section.getBoundingClientRect();
+    return rect.top < window.innerHeight && rect.bottom > 0;
+}
 
-//     if (sectionPosition < screenPosition && !hasAnimated) {
-//         hasAnimated = true; // Marca a animação como já executada
-//         animateNumbers();
-//     }
-// });
+window.addEventListener('scroll', () => {
+    if (isSectionVisible('strip-informations re') && !hasAnimated) {
+        hasAnimated = true;
+        animateNumbers();
+    }
+});
+
+// Também ativa se já estiver visível ao carregar
+window.addEventListener('DOMContentLoaded', () => {
+    if (isSectionVisible('strip-informations re') && !hasAnimated) {
+        hasAnimated = true;
+        animateNumbers();
+    }
+});
 
 const carousel = document.getElementById('recycle-slider');
 const nextBtn = document.querySelector('.next-btn');

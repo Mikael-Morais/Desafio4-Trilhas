@@ -1,10 +1,10 @@
-<link rel="stylesheet" href="/pages/App/styles/zmapa-style.css" />
+<link rel="stylesheet" href="../styles/zmapa-style.css" />
 <section class="header-section">
   <h2 class="titulo"><i class="fa fa-map"></i> Mapa de ecopontos</h2>
   <p class="subtitulo">Pesquise e encontre o ecoponto mais próximo da sua região</p>
   <div class="campo-pesquisa">
     <i class="fa fa-search"></i>
-    <input type="text" />
+    <input type="text" id="pesquisa-ecoponto" placeholder="Pesquisar ecoponto..." />
   </div>
 </section>
 
@@ -123,4 +123,15 @@
       <button class="details-btn">Detalhes</button>
     </div>
   </div>
+  <div class="modal-overlay" id="mapa-modal">
+    <div class="modal-container">
+      <button class="modal-close" id="modal-mapa-close">&times;</button>
+      <iframe id="modal-mapa-iframe" src="" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="modal-details">
+        <h3 id="modal-mapa-title"></h3>
+        <p id="modal-mapa-endereco"></p>
+      </div>
+    </div>
+  </div>
+  <script src="../javascript/zmapa.js"></script>
 </section>

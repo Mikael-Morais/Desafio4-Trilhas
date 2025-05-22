@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const usuario = document.getElementById("usuario").value;
       const senha = document.getElementById("senha").value;
 
-      fetch("http://localhost:3000/api/usuarios/login", {
+      fetch("https://deploy-desafio4-trilhas.onrender.com/api/usuarios/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ usuario, senha }),

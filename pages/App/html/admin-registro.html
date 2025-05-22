@@ -1,20 +1,10 @@
-<link rel="stylesheet" href="/pages/App/styles/admin-registro.css" />
+<link rel="stylesheet" href="../styles/admin-registro.css" />
 <div class="content__admin">
-  <h1><i class="fa-solid fa-square-check" style="color: #59a098"></i> Confirmação Registro</h1>
 
   <div class="content__admin__lista">
     <h2><i class="fa-regular fa-folder-open" style="color: #59a098"></i> Registro de Transferência</h2>
     <ul class="registro-lista">
-      <li data-id="101" data-nome="Ana Souza" data-data="2025-05-10" data-material="Plástico">Ana Souza (ID: 101)</li>
-      <li data-id="102" data-nome="Carlos Lima" data-data="2025-05-11" data-material="Vidro">Carlos Lima (ID: 102)</li>
-      <li data-id="103" data-nome="Beatriz Alves" data-data="2025-05-12" data-material="Papel">Beatriz Alves (ID: 103)</li>
-      <li data-id="104" data-nome="João Pedro" data-data="2025-05-13" data-material="Metal">João Pedro (ID: 104)</li>
-      <li data-id="105" data-nome="Lucas Martins" data-data="2025-05-14" data-material="Plástico">Lucas Martins (ID: 105)</li>
-      <li data-id="106" data-nome="Marina Silva" data-data="2025-05-15" data-material="Vidro">Marina Silva (ID: 106)</li>
-      <li data-id="107" data-nome="Pedro Henrique" data-data="2025-05-16" data-material="Metal">Pedro Henrique (ID: 107)</li>
-      <li data-id="108" data-nome="Juliana Costa" data-data="2025-05-17" data-material="Papel">Juliana Costa (ID: 108)</li>
-      <li data-id="109" data-nome="Fernanda Dias" data-data="2025-05-18" data-material="Plástico">Fernanda Dias (ID: 109)</li>
-      <li data-id="110" data-nome="Rafael Torres" data-data="2025-05-19" data-material="Vidro">Rafael Torres (ID: 110)</li>
+      <!-- <li data-id="101" data-nome="Ana Souza" data-data="2025-05-10" data-material="Plástico" data-peso="2.5kg" data-origem="Residencial">Ana Souza (ID: 101)</li> -->
     </ul>
   </div>
 
@@ -25,13 +15,19 @@
         <p><strong>Nome:</strong> <span id="info-nome">Selecione um usuário</span></p>
         <p><strong>Data:</strong> <span id="info-data">-</span></p>
         <p><strong>ID:</strong> <span id="info-id">-</span></p>
-        <p><strong>Material:</strong> <span id="info-material">-</span></p>
+        <p><strong>Materiais:</strong> <span id="info-material">-</span></p>
+        <p><strong>Peso:</strong> <span id="info-peso">-</span></p>
+        <p><strong>Origem:</strong> <span id="info-origem">-</span></p>
+        <div class="info-botoes">
+          <button class="botao-aceitar"><i class="fa-solid fa-check"></i> Aceitar</button>
+          <!-- <button class="botao-recusar"><i class="fa-solid fa-xmark"></i> Recusar</button> -->
+        </div>
       </div>
     </div>
     <div class="content__admin__comprovante">
       <h3><i class="fa-solid fa-cloud-arrow-up" style="color: #59a098"></i> Comprovante de transferência</h3>
-      <img src="/pages/App/assets/comprovanteZ.png" alt="comprovante" />
+      <img src="../assets/comprovanteZ.png" alt="comprovante" />
     </div>
   </div>
-  <script src="/pages/App/admin.js"></script>
+  <script src="../javascript/admin.js"></script>
 </div>
