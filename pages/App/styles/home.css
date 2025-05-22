@@ -47,10 +47,9 @@ body {
 .grafico {
   display: flex;
   flex-direction: row;
-  height: 32vh;
   border-radius: 10px;
   gap: 6px;
-  margin-bottom: 4px;
+  margin-bottom: 14px;
 }
 
 .container-grafico-coluna,
@@ -61,6 +60,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  
 }
 
 .container-grafico-coluna {
