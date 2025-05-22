@@ -57,16 +57,11 @@ router.get("/", async (req, res) => {
 router.post("/pontos", async (req, res) => {
   const { usuario_id, usuario_senha, usuario_pontos } = req.body;
 
-  console.log( usuario_id, usuario_senha, usuario_pontos)
   try {
     const user = await db.query(`SELECT * FROM usuarios WHERE id='${usuario_id}' AND senha='${usuario_senha}'`);
-
-    console.log(JSON.stringify(user.rows[0]));
     
     if (user.rows.length > 0) {
       await db.query(`UPDATE usuarios SET pontos='${usuario_pontos}' WHERE id='${usuario_id}'`);
-
-      console.log(usuario_pontos+ " atualizados");
       res.json({ sucesso: true });
     } else {
       res.status(401).json({ erro: "Erro ao confirmar usuário" });

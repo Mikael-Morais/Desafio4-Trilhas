@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../postgresqlConfig');
+const { route } = require('./users');
 
 
 // registrando reciclagem de um usuário
@@ -55,4 +56,4 @@ router.get("/", async (req, res) => {
     }
 });
 
-module.exports = router
+module.exports = router;

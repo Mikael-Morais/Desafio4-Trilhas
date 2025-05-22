@@ -31,6 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
           scriptPath = "/pages/App/javascript/troca-pontos.js";
         } else if (url.includes("zmapa.html")) {
           scriptPath = "/pages/App/javascript/zmapa.js";
+        } else if (url.includes("admin-registro.html")) {
+          scriptPath = "/pages/App/javascript/admin.js";
         }
 
         if (scriptPath) {
@@ -44,13 +46,11 @@ document.addEventListener("DOMContentLoaded", function () {
             if (scriptPath.includes("zmapa.js") && typeof initZmapa === "function") {
               initZmapa();
             }
+            if (scriptPath.includes("admin.js") && typeof initAdmin === "function") {
+              initAdmin();
+            }
           };
           document.body.appendChild(newScript);
-        }
-
-        // Caso específico que não exige script externo
-        if (url.includes("admin-registro.html")) {
-          window.initAdminRegistro();
         }
       });
   }

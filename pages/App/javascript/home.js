@@ -105,8 +105,6 @@ window.initCharts = async function () {
 
   const response = await fetch(`http://localhost:3000/api/reciclagens?usuario_id=${usuario_id}`);
   const reciclagens = await response.json();
-  
-  console.log(reciclagens)
 
   montarGraficoColunas(reciclagens);
   montarGraficoPizza(reciclagens);
